@@ -33,7 +33,8 @@
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
-
+    <script type="text/javascript" src="//use.typekit.net/syv3oau.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 
@@ -48,7 +49,7 @@
 				<div id="inner-header" class="wrap cf">
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
+					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?> </a></p>
 
 					<?php // if you'd like to use the site description you can un-comment it below ?>
 					<?php // bloginfo('description'); ?>
