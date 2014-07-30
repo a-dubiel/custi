@@ -20,9 +20,81 @@ body {
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $gray;
+	background-color: $white;
   -webkit-font-smoothing: antialiased;
 }
+
+.primary-nav, .secondary-nav {
+  border-bottom: 1px solid $border-color;
+}
+
+.secondary-nav {
+  height:50px;
+}
+
+.user-nav, .social-nav {
+  margin-top:10px;
+}
+
+.secondary-nav a {
+  color: $gray;
+  font-size: 22px;
+  
+   &:hover {
+    @include transition(all 0.2s ease-in-out);
+  }
+}
+
+.header-facebook-square:hover {
+    color: $facebook;
+}
+
+.header-instagram:hover {
+    color: $instagram;
+}
+
+.header-facebook-square, .header-shopping-cart {
+  margin-right:10px; 
+}
+
+.header-shopping-cart .fa {
+  color: $custi-green;
+}
+
+.header-shopping-cart {
+  position: relative;
+}
+
+.header-shopping-cart span {
+  position: absolute;
+  padding:2px 3px 1px;
+  line-height: 12px;
+  font-size: 14px;
+  background: $black;
+  top:-5px;
+  right:-10px;
+  color: $white;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  @include border-radius(3px);
+  
+}
+
+.header-logo {
+  display: block;
+  text-indent: -9999px;
+  background:url('../images/logo.png') no-repeat;
+  margin: 0 auto;
+  width: 87px;
+  height: 82px;
+}
+
+.primary-nav {
+  padding:20px 0;
+}
+
+
 
 /********************
 WORDPRESS BODY CLASSES
@@ -69,10 +141,7 @@ style a page via class
 LAYOUT & GRID STYLES
 *********************/
 
-.wrap {
-	width: 96%;
-	margin: 0 auto;
-}
+
 
 /*********************
 LINK STYLES
@@ -147,21 +216,15 @@ h5, .h5 {
 	letter-spacing: 2px;
 }
 
+p, li {
+      font-size: 0.875em; /* 1.4em relative to a 16px baseline on the body will result in a 20px font size */
+}
+
 /*********************
 HEADER STYLES
 *********************/
 
-.header {
-	background-color: $black;
-}
 
-	#logo {
-		margin: 0.75em 0;
-
-		a {
-			color: $white;
-		}
-	}
 
 /*********************
 NAVIGATION STYLES
@@ -860,9 +923,7 @@ FOOTER STYLES
 *********************/
 
 .footer {
-	clear: both;
-	background-color: $black;
-	color: $light-gray;
+    background: $custi-dark-green;
 }
 
 	/*

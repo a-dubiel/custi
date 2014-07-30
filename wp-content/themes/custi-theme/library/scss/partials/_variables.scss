@@ -22,12 +22,12 @@ $alert-red:         #fbe3e4;
 $alert-green:       #e6efc2;
 $alert-blue:        #d5edf8;
 
-$black:             #323944;
+$black:             #333333;
 $white:             #fff;
 
 $light-gray:        #f8f9fa;
-$gray:              #eaedf2;
-$text-color:        #5c6b80;
+$gray:              #7c7c7c;
+$text-color:        #333333;
 $meta-gray:         #9fa6b4;
 
 $tan:               #eceee5;
@@ -37,11 +37,21 @@ $green:             #7dd667;
 $bones-pink:        #f01d4f;
 $blue:              #2980b9;
 
-$link-color:        $bones-pink;
+$link-color:        $black;
 $link-hover:        darken($link-color, 9%);
 
-$border-color:      #ccc;
+$gray-hover:        darken($gray, 9%);
+
+$border-color:      #ededed;
 $disabled-gray:     #cfcfcf;
+
+$facebook:          #3b5998;
+$instagram:         #3f729b;
+
+$custi-green:       #79ac3c;
+$custi-dark-green:  #2b572a;
+$custi-blue:        #44b3d7;
+$custi-yellow:      #ccba3b;
 
 
 /*

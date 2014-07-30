@@ -42,36 +42,60 @@
 
 	<body <?php body_class(); ?>>
 
-		<div id="container">
-
 			<header class="header" role="banner">
+          
+      <div class="container">
 
-				<div id="inner-header" class="wrap cf">
+				  
+				  <div class="secondary-nav">
+				    <div class="pull-right user-nav">
+  				    <a href="#" class="header-shopping-cart"><i class="fa fa-shopping-cart"></i><span class="shopping-cart-count">0</span></a>
+  				    <a href="#" class="header-search"><i class="fa fa-search"></i></a>
+				    </div>
+				    <div class="pull-left social-nav">
+  				    <a href="#" class="header-facebook-square"><i class="fa fa-facebook-square"></i></a>
+  				    <a href="#" class="header-instagram"><i class="fa fa-instagram"></i></a>
+				    </div>
 
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?> </a></p>
+				  </div>
+				
+				  <div class="primary-nav">
+				    
+				    <div class="row">
+				      <div class="col-lg-5 col-md-5 col-sm-5">
+                  
+                   <ul class="pull-right hidden-xs primary-nav-list">
+				      <li><a href="#">Sklep <i class="fa fa-caret-down"></i></a></li>
+				      <li><a href="#">Kreator</a></li>
+				    </ul>
 
-					<?php // if you'd like to use the site description you can un-comment it below ?>
-					<?php // bloginfo('description'); ?>
+                  
+				      </div>
+				       
+				      <div class="col-lg-2 col-md-2 col-sm-2">
+				        <a class="header-logo" href="<?php echo home_url(); ?>" rel="nofollow">Custi</a>
+				      </div>
+				      
+				      <div class="col-lg-5 col-md-5 col-sm-5">
+                
+                <ul class="pull-left hidden-xs primary-nav-list">
+				      <li><a href="#">Więcej <i class="fa fa-caret-down"></i></a></li>
+				      <li><a href="#">Kontakt</a></li>
+				    </ul>
+                
+				      </div>
+				       
+				    
+				    </div>
+				  
+				  
+				    
+				    
+				    
+				    
+				   				    
+				  </div>
+              
 
-
-					<nav role="navigation">
-						<?php wp_nav_menu(array(
-    					'container' => false,                           // remove nav container
-    					'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-    					'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-    					'menu_class' => 'nav top-nav cf',               // adding custom nav class
-    					'theme_location' => 'main-nav',                 // where it's located in the theme
-    					'before' => '',                                 // before the menu
-        			'after' => '',                                  // after the menu
-        			'link_before' => '',                            // before each link
-        			'link_after' => '',                             // after each link
-        			'depth' => 0,                                   // limit the depth of the nav
-    					'fallback_cb' => ''                             // fallback function (if there is one)
-						)); ?>
-
-					</nav>
-
-				</div>
-
+          		</div>
 			</header>
