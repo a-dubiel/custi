@@ -51,10 +51,17 @@
 				    <div class="pull-right user-nav">
   				    <a href="#" class="header-shopping-cart"><i class="fa fa-shopping-cart"></i><span class="shopping-cart-count">0</span></a>
   				    <a href="#" class="header-search"><i class="fa fa-search"></i></a>
+  				    
+  				    <div class="header-search-wrap hide">
+  				      <form>
+  				        <input type="search" />
+                </form>
+  				    </div>
+  				    
 				    </div>
 				    <div class="pull-left social-nav">
-  				    <a href="#" class="header-facebook-square"><i class="fa fa-facebook-square"></i></a>
-  				    <a href="#" class="header-instagram"><i class="fa fa-instagram"></i></a>
+  				    <a href="#" class="header-facebook-square"><span class="social-more-info">Facebook</span><i class="fa fa-facebook-square"></i></a>
+  				    <a href="#" class="header-instagram"><span class="social-more-info">Instagram</span><i class="fa fa-instagram"></i></a>
 				    </div>
 
 				  </div>

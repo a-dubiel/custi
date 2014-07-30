@@ -37,24 +37,90 @@ body {
 }
 
 .secondary-nav a {
-  color: $gray;
-  font-size: 22px;
+  font-size: 22px;  
+}
+
+.header-facebook-square,
+.header-instagram {
+  width:20px;
+  height:25px;
+  display:inline-block;
+  text-align: right;
+  @include transition(width 0.3s);
+  text-decoration: none;
+  position: relative;
+  overflow:hidden;
   
-   &:hover {
-    @include transition(all 0.2s ease-in-out);
+  &:hover {
+    width:100px;
   }
+  
+  .social-more-info {
+    font-size:12px;
+    line-height: 22px;
+    text-transform:uppercase;
+    font-weight: 600;
+    position: absolute;
+    top:5px;
+    left:-100px;
+    opacity:1;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    width:100px;
+    height:22px;
+    text-align: left;
+  }
+  
+  &:hover .social-more-info {
+    opacity:1;
+    -webkit-transition-delay: 0.1s;
+  	transition-delay: 0.1s;
+  	-webkit-transform: translateX(0);
+  	transform: translateX(0);
+  	left:0;
+  }
+  
+
 }
 
-.header-facebook-square:hover {
-    color: $facebook;
-}
+.header-instagram {
 
-.header-instagram:hover {
+  &:hover .fa,
+  &:hover .social-more-info {
     color: $instagram;
+  }
+
 }
 
-.header-facebook-square, .header-shopping-cart {
-  margin-right:10px; 
+.header-facebook-square {
+  margin-right:5px; 
+
+  &:hover .fa,
+  &:hover .social-more-info {
+     color: $facebook;
+  }
+
+}
+
+
+.header-instagram .fa,
+.header-facebook-square .fa,
+.header-search .fa {
+  color: $gray;
+}
+
+.header-search {
+
+  &:hover .fa {
+  color: $link-hover;
+   @include transition(all 0.3s ease-in-out);
+  }
+  
+  a:active .fa {
+    color:red;
+  }
 }
 
 .header-shopping-cart .fa {
@@ -63,6 +129,7 @@ body {
 
 .header-shopping-cart {
   position: relative;
+  margin-right:15px;
 }
 
 .header-shopping-cart span {
@@ -92,6 +159,20 @@ body {
 
 .primary-nav {
   padding:20px 0;
+}
+
+.header-search-wrap {
+  display:inline;
+  width:100px;
+}
+
+.header-search-wrap input[type="search"]{
+  display:inline;
+  background:$white;
+  border:1px solid $border-color;
+  height:30px;
+  width:200px;
+  margin-right:0;
 }
 
 
@@ -177,7 +258,7 @@ H1, H2, H3, H4, H5 STYLES
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
-	font-weight: 500;
+	font-weight: 600;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -206,7 +287,6 @@ h3, .h3 {
 
 h4, .h4 {
 	font-size: 1.1em;
-	font-weight: 700;
 }
 
 h5, .h5 {
@@ -245,8 +325,8 @@ and more scalable.
 	li {
 
 		a {
+		
 			display: block;
-			color: $white;
 			text-decoration: none;
 			padding: 0.75em;
 
@@ -926,24 +1006,44 @@ FOOTER STYLES
     background: $custi-dark-green;
 }
 
-	/*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
-	.footer-links {
+.footer-logo {
+  display:block;
+  text-indent: -9999px;
+  width:63px;
+  height:59px;
+  background:url('../images/footer-logo.png') no-repeat;
+  margin:20px auto;
+}
 
-		ul {
+.footer-nav li a {
+  color: $custi-light-green;
+  text-align: center;
+}
 
-			li {}
+.footer-nav li {
+  border-bottom: 1px solid $custi-green;
 
-		}
+  &:first-child {
+    border-top: 1px solid $custi-green;
+  }
+}
 
-	} /* end .footer-links */
+.footer-social {
+  text-align: center;
+  padding:20px 0;
+}
 
+.footer-facebook-square .fa,
+.footer-instagram .fa {
+  color:$custi-green;
+  font-size:22px;
+  
+  &:hover {
+    color: $custi-light-green;
+    @include transition(all 0.2s ease-in-out);
+  }
+}
 
-	.copyright {}
+.footer-facebook-square .fa {
+  margin-right:10px;
+}

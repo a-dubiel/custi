@@ -215,6 +215,10 @@ HEADER STYLES
   color: #7c7c7c;
   text-decoration: none;
   line-height: 90px; }
+  .primary-nav-list a:hover {
+    color: #333333;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
 
 /*********************
 NAVIGATION STYLES
@@ -225,7 +229,6 @@ NAVIGATION STYLES
   /* highlight current page */
   /* end current highlighters */ }
   .nav ul {
-    background: #333333;
     margin-top: 0; }
   .nav li {
     float: left;
@@ -241,7 +244,6 @@ NAVIGATION STYLES
       has the possibility of being a mobile device.
       */ }
       .nav li a:hover, .nav li a:focus {
-        color: white;
         text-decoration: underline; }
     .nav li ul.sub-menu,
     .nav li ul.children {
@@ -312,8 +314,8 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-.footer {
-  height: 200px; }
+.footer-logo {
+  margin: 0 auto 30px; }
 
 .mountains {
   display: block;
@@ -323,19 +325,28 @@ FOOTER STYLES
   background-repeat: no-repeat;
   background-position: center top; }
 
-/*
-you'll probably need to do quite a bit
-of overriding here if you styled them for
-mobile. Make sure to double check these!
-*/
-.footer-links ul li {
-  /*
-  be careful with the depth of your menus.
-  it's very rare to have multi-depth menus in
-  the footer.
-  */ }
+.footer-nav li {
+  border: 0; }
+  .footer-nav li:first-child {
+    border: 0; }
 
-/* end .footer-links */
+.footer-nav li a {
+  margin: 0 10px; }
+
+.footer-nav {
+  margin-top: 15px; }
+
+.footer-facebook-square .fa,
+.footer-instagram .fa {
+  margin-top: 25px; }
+
+.footer-facebook-square .fa {
+  margin-right: 5px; }
+
+.footer-social {
+  text-align: right;
+  padding: 0; }
+
 /******************************************************************
 Site Name:
 Author:

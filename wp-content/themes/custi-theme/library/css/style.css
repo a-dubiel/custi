@@ -512,6 +512,8 @@ I've edited it a bit, but it's a nice starting point.
 /*
 some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
+
+
 */
 p {
   -ms-word-break: break-all;
@@ -1931,26 +1933,76 @@ body {
   margin-top: 10px; }
 
 .secondary-nav a {
-  color: #7c7c7c;
   font-size: 22px; }
-  .secondary-nav a:hover {
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out; }
 
-.header-facebook-square:hover {
-  color: #3b5998; }
+.header-facebook-square,
+.header-instagram {
+  width: 20px;
+  height: 25px;
+  display: inline-block;
+  text-align: right;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden; }
+  .header-facebook-square:hover,
+  .header-instagram:hover {
+    width: 100px; }
+  .header-facebook-square .social-more-info,
+  .header-instagram .social-more-info {
+    font-size: 12px;
+    line-height: 22px;
+    text-transform: uppercase;
+    font-weight: 600;
+    position: absolute;
+    top: 5px;
+    left: -100px;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+        transform: translateX(-100%);
+    width: 100px;
+    height: 22px;
+    text-align: left; }
+  .header-facebook-square:hover .social-more-info,
+  .header-instagram:hover .social-more-info {
+    opacity: 1;
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+        transform: translateX(0);
+    left: 0; }
 
-.header-instagram:hover {
+.header-instagram:hover .fa, .header-instagram:hover .social-more-info {
   color: #3f729b; }
 
-.header-facebook-square, .header-shopping-cart {
-  margin-right: 10px; }
+.header-facebook-square {
+  margin-right: 5px; }
+  .header-facebook-square:hover .fa, .header-facebook-square:hover .social-more-info {
+    color: #3b5998; }
+
+.header-instagram .fa,
+.header-facebook-square .fa,
+.header-search .fa {
+  color: #7c7c7c; }
+
+.header-search:hover .fa {
+  color: #1c1c1c;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+.header-search a:active .fa {
+  color: red; }
 
 .header-shopping-cart .fa {
   color: #79ac3c; }
 
 .header-shopping-cart {
-  position: relative; }
+  position: relative;
+  margin-right: 15px; }
 
 .header-shopping-cart span {
   position: absolute;
@@ -1976,6 +2028,18 @@ body {
 
 .primary-nav {
   padding: 20px 0; }
+
+.header-search-wrap {
+  display: inline;
+  width: 100px; }
+
+.header-search-wrap input[type="search"] {
+  display: inline;
+  background: white;
+  border: 1px solid #ededed;
+  height: 30px;
+  width: 200px;
+  margin-right: 0; }
 
 /********************
 WORDPRESS BODY CLASSES
@@ -2042,7 +2106,7 @@ H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
-  font-weight: 500;
+  font-weight: 600;
   /*
   if you're going to use webfonts, be sure to check your weights
   http://css-tricks.com/watch-your-font-weight/
@@ -2064,8 +2128,7 @@ h3, .h3 {
   font-size: 1.125em; }
 
 h4, .h4 {
-  font-size: 1.1em;
-  font-weight: 700; }
+  font-size: 1.1em; }
 
 h5, .h5 {
   font-size: 0.846em;
@@ -2106,7 +2169,6 @@ and more scalable.
     */ }
     .nav li a {
       display: block;
-      color: white;
       text-decoration: none;
       padding: 0.75em;
       /*
@@ -2451,16 +2513,40 @@ FOOTER STYLES
 .footer {
   background: #2b572a; }
 
-/*
-if you checked out the link above:
-http://www.alistapart.com/articles/organizing-mobile/
-you'll want to style the footer nav
-a bit more in-depth. Remember to keep
-it simple because you'll have to
-override these styles for the desktop
-view.
-*/
-/* end .footer-links */
+.footer-logo {
+  display: block;
+  text-indent: -9999px;
+  width: 63px;
+  height: 59px;
+  background: url("../images/footer-logo.png") no-repeat;
+  margin: 20px auto; }
+
+.footer-nav li a {
+  color: #c1ef8a;
+  text-align: center; }
+
+.footer-nav li {
+  border-bottom: 1px solid #79ac3c; }
+  .footer-nav li:first-child {
+    border-top: 1px solid #79ac3c; }
+
+.footer-social {
+  text-align: center;
+  padding: 20px 0; }
+
+.footer-facebook-square .fa,
+.footer-instagram .fa {
+  color: #79ac3c;
+  font-size: 22px; }
+  .footer-facebook-square .fa:hover,
+  .footer-instagram .fa:hover {
+    color: #c1ef8a;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+
+.footer-facebook-square .fa {
+  margin-right: 10px; }
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -2595,6 +2681,10 @@ you can add resource intensive styles.
     color: #7c7c7c;
     text-decoration: none;
     line-height: 90px; }
+    .primary-nav-list a:hover {
+      color: #333333;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
 
   /*********************
   NAVIGATION STYLES
@@ -2605,7 +2695,6 @@ you can add resource intensive styles.
     /* highlight current page */
     /* end current highlighters */ }
     .nav ul {
-      background: #333333;
       margin-top: 0; }
     .nav li {
       float: left;
@@ -2621,7 +2710,6 @@ you can add resource intensive styles.
         has the possibility of being a mobile device.
         */ }
         .nav li a:hover, .nav li a:focus {
-          color: white;
           text-decoration: underline; }
       .nav li ul.sub-menu,
       .nav li ul.children {
@@ -2692,8 +2780,8 @@ you can add resource intensive styles.
   /*********************
   FOOTER STYLES
   *********************/
-  .footer {
-    height: 200px; }
+  .footer-logo {
+    margin: 0 auto 30px; }
 
   .mountains {
     display: block;
@@ -2703,19 +2791,27 @@ you can add resource intensive styles.
     background-repeat: no-repeat;
     background-position: center top; }
 
-  /*
-  you'll probably need to do quite a bit
-  of overriding here if you styled them for
-  mobile. Make sure to double check these!
-  */
-  .footer-links ul li {
-    /*
-    be careful with the depth of your menus.
-    it's very rare to have multi-depth menus in
-    the footer.
-    */ }
+  .footer-nav li {
+    border: 0; }
+    .footer-nav li:first-child {
+      border: 0; }
 
-  /* end .footer-links */ }
+  .footer-nav li a {
+    margin: 0 10px; }
+
+  .footer-nav {
+    margin-top: 15px; }
+
+  .footer-facebook-square .fa,
+  .footer-instagram .fa {
+    margin-top: 25px; }
+
+  .footer-facebook-square .fa {
+    margin-right: 5px; }
+
+  .footer-social {
+    text-align: right;
+    padding: 0; } }
 /*********************
 DESKTOP
 This is the average viewing window. So Desktops, Laptops, and
