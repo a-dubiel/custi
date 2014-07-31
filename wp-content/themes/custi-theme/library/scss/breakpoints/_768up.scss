@@ -38,10 +38,6 @@ HEADER STYLES
   height: 82px;
 }
 
-.primary-nav {
-  height:130px;
-}
-
 .primary-nav-list {
   margin:0;
   padding:0;
@@ -74,10 +70,134 @@ HEADER STYLES
   }
 }
 
+.header-search-wrap input[type="text"].expanded {
+  width:200px;
+}
+
+.user-nav.expanded {
+  width:270px;
+}
+
+.header-facebook-square,
+.header-instagram {
+  width:20px;
+  height:27px;
+  display:inline-block;
+  text-align: right;
+  @include transition(width 0.3s);
+  text-decoration: none;
+  position: relative;
+  overflow:hidden;
+  
+  &:hover {
+    width:100px;
+  }
+  
+  .social-more-info {
+    font-size:12px;
+    line-height: 22px;
+    text-transform:uppercase;
+    font-weight: 600;
+    position: absolute;
+    top:5px;
+    left:-100px;
+    opacity:1;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    width:100px;
+    height:22px;
+    text-align: left;
+  }
+  
+  &:hover .social-more-info {
+    opacity:1;
+    -webkit-transition-delay: 0.1s;
+  	transition-delay: 0.1s;
+  	-webkit-transform: translateX(0);
+  	transform: translateX(0);
+  	left:0;
+  }
+  
+
+}
+
+
 
 /*********************
 NAVIGATION STYLES
 *********************/
+
+.store-dropdown {
+  position: absolute;
+  z-index:5;
+  height:320px;
+  width:100%;
+  background: rgba(255,255,255,0.9);
+  opacity:0;
+  @include transition(all 0.5s);
+  overflow:hidden;
+  visibility: hidden;
+  padding-bottom:20px;
+
+}
+
+.store-dropdown.expanded, .store-dropdown:hover {
+  height:auto;
+  opacity:1;
+  visibility: visible;
+  @include transition(all 0.5s);
+}
+
+.store-dropdown-item {
+  text-decoration: none;
+  text-align: center;
+
+  
+  &:hover .store-dropdown-thumb {
+    @include transition(all 0.5s);
+  }
+  
+  &:hover .store-dropdown-thumb img {
+    @include transition(all 0.5s);
+    -webkit-transform: translate3d(0,0, 0);
+    transform: translate3d(0,0,0);
+  }
+  
+  
+}
+
+.store-dropdown-thumb {
+  display:block;
+  width:100%;
+  height:100px;
+  background:$custi-green;
+  margin-top:20px;
+  overflow: hidden;
+}
+
+.store-dropdown-thumb img {
+  -webkit-transform: translate3d(-40px,0, 0);
+	transform: translate3d(-40px,0,0);
+@include transition(all 0.5s);
+}
+
+.store-dropdown-item h5 {
+  margin:7px 0 0 0;
+  font-size:0.750em;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height:1em;
+}
+
+.store-dropdown-item p {
+  color:$gray;
+  font-size:0.750em;
+  margin:0;
+}
+
+
 
 .nav {
 	border: 0;
@@ -302,9 +422,6 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 
-.footer {
-
-}
 
 .footer-logo {
   margin:0 auto 30px;

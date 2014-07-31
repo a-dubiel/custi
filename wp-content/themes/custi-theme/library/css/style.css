@@ -1644,24 +1644,14 @@ input[type="color"],
 select,
 textarea,
 .field {
-  display: block;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 12px;
-  margin-bottom: 14px;
-  font-size: 1em;
+  font-size: 0.875em;
   color: #333333;
   border-radius: 3px;
-  vertical-align: middle;
   -webkit-box-shadow: none;
           box-shadow: none;
   border: 0;
-  width: 100%;
-  max-width: 400px;
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #7c7c7c;
-  -webkit-transition: background-color 0.24s ease-in-out;
-  transition: background-color 0.24s ease-in-out; }
+  -webkit-appearance: none; }
   input[type="text"]:focus, input[type="text"]:active,
   input[type="password"]:focus,
   input[type="password"]:active,
@@ -1695,7 +1685,7 @@ textarea,
   textarea:active,
   .field:focus,
   .field:active {
-    background-color: #868686; }
+    outline: none; }
   input[type="text"].error, input[type="text"].is-invalid,
   input[type="password"].error,
   input[type="password"].is-invalid,
@@ -1938,7 +1928,7 @@ body {
 .header-facebook-square,
 .header-instagram {
   width: 20px;
-  height: 25px;
+  height: 27px;
   display: inline-block;
   text-align: right;
   -webkit-transition: width 0.3s;
@@ -1946,9 +1936,6 @@ body {
   text-decoration: none;
   position: relative;
   overflow: hidden; }
-  .header-facebook-square:hover,
-  .header-instagram:hover {
-    width: 100px; }
   .header-facebook-square .social-more-info,
   .header-instagram .social-more-info {
     font-size: 12px;
@@ -1958,7 +1945,7 @@ body {
     position: absolute;
     top: 5px;
     left: -100px;
-    opacity: 1;
+    opacity: 0;
     -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
     transition: opacity 0.3s, transform 0.3s;
     -webkit-transform: translateX(-100%);
@@ -1967,15 +1954,6 @@ body {
     width: 100px;
     height: 22px;
     text-align: left; }
-  .header-facebook-square:hover .social-more-info,
-  .header-instagram:hover .social-more-info {
-    opacity: 1;
-    -webkit-transition-delay: 0.1s;
-    transition-delay: 0.1s;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-        transform: translateX(0);
-    left: 0; }
 
 .header-instagram:hover .fa, .header-instagram:hover .social-more-info {
   color: #3f729b; }
@@ -2002,7 +1980,9 @@ body {
 
 .header-shopping-cart {
   position: relative;
-  margin-right: 15px; }
+  margin-right: 15px;
+  width: 30px;
+  height: 30px; }
 
 .header-shopping-cart span {
   position: absolute;
@@ -2027,19 +2007,37 @@ body {
   height: 82px; }
 
 .primary-nav {
-  padding: 20px 0; }
+  padding: 10px 0; }
 
 .header-search-wrap {
-  display: inline;
-  width: 100px; }
+  display: inline-block;
+  position: relative;
+  top: -3px; }
+  .header-search-wrap .searchform label, .header-search-wrap #searchsubmit {
+    display: none; }
 
-.header-search-wrap input[type="search"] {
-  display: inline;
+.user-nav .header-search-wrap input[type="text"] {
+  display: block;
   background: white;
   border: 1px solid #ededed;
   height: 30px;
-  width: 200px;
-  margin-right: 0; }
+  width: 0px;
+  margin-right: 0;
+  padding: 3px 5px;
+  line-height: 30px;
+  font-size: 14px;
+  margin-left: 5px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  margin-right: -15px;
+  visibility: hidden; }
+
+.header-search-wrap input[type="text"].expanded {
+  width: 150px;
+  opacity: 1;
+  margin-right: 0;
+  visibility: visible; }
 
 /********************
 WORDPRESS BODY CLASSES
@@ -2510,7 +2508,7 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-.footer {
+.footer-wrap {
   background: #2b572a; }
 
 .footer-logo {
@@ -2663,9 +2661,6 @@ you can add resource intensive styles.
     width: 87px;
     height: 82px; }
 
-  .primary-nav {
-    height: 130px; }
-
   .primary-nav-list {
     margin: 0;
     padding: 0; }
@@ -2686,9 +2681,115 @@ you can add resource intensive styles.
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out; }
 
+  .header-search-wrap input[type="text"].expanded {
+    width: 200px; }
+
+  .user-nav.expanded {
+    width: 270px; }
+
+  .header-facebook-square,
+  .header-instagram {
+    width: 20px;
+    height: 27px;
+    display: inline-block;
+    text-align: right;
+    -webkit-transition: width 0.3s;
+    transition: width 0.3s;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden; }
+    .header-facebook-square:hover,
+    .header-instagram:hover {
+      width: 100px; }
+    .header-facebook-square .social-more-info,
+    .header-instagram .social-more-info {
+      font-size: 12px;
+      line-height: 22px;
+      text-transform: uppercase;
+      font-weight: 600;
+      position: absolute;
+      top: 5px;
+      left: -100px;
+      opacity: 1;
+      -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+      transition: opacity 0.3s, transform 0.3s;
+      -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+      width: 100px;
+      height: 22px;
+      text-align: left; }
+    .header-facebook-square:hover .social-more-info,
+    .header-instagram:hover .social-more-info {
+      opacity: 1;
+      -webkit-transition-delay: 0.1s;
+      transition-delay: 0.1s;
+      -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+      left: 0; }
+
   /*********************
   NAVIGATION STYLES
   *********************/
+  .store-dropdown {
+    position: absolute;
+    z-index: 5;
+    height: 320px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    overflow: hidden;
+    visibility: hidden;
+    padding-bottom: 20px; }
+
+  .store-dropdown.expanded, .store-dropdown:hover {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s; }
+
+  .store-dropdown-item {
+    text-decoration: none;
+    text-align: center; }
+    .store-dropdown-item:hover .store-dropdown-thumb {
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s; }
+    .store-dropdown-item:hover .store-dropdown-thumb img {
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0); }
+
+  .store-dropdown-thumb {
+    display: block;
+    width: 100%;
+    height: 100px;
+    background: #79ac3c;
+    margin-top: 20px;
+    overflow: hidden; }
+
+  .store-dropdown-thumb img {
+    -webkit-transform: translate3d(-40px, 0, 0);
+    transform: translate3d(-40px, 0, 0);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s; }
+
+  .store-dropdown-item h5 {
+    margin: 7px 0 0 0;
+    font-size: 0.750em;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1em; }
+
+  .store-dropdown-item p {
+    color: #7c7c7c;
+    font-size: 0.750em;
+    margin: 0; }
+
   .nav {
     border: 0;
     /* end .menu ul li */
@@ -2903,7 +3004,12 @@ query for retina AND a certain size if you want. Go Nuts.
   .mountains {
     background: url("../images/footer@2x.png") no-repeat;
     -webkit-background-size: auto 170px;
-            background-size: auto 170px; } }
+            background-size: auto 170px; }
+
+  .footer-logo {
+    background: url("../images/footer-logo@2x.png") no-repeat;
+    -webkit-background-size: 63px 59px;
+            background-size: 63px 59px; } }
 /*********************
 PRINT STYLESHEET
 Feel free to customize this. Remember to add things that won't make

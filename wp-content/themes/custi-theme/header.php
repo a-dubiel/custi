@@ -41,68 +41,149 @@
 	</head>
 
 	<body <?php body_class(); ?>>
-
-			<header class="header" role="banner">
-          
+		<header class="header" role="banner">    
       <div class="container">
-
-				  
 				  <div class="secondary-nav">
 				    <div class="pull-right user-nav">
   				    <a href="#" class="header-shopping-cart"><i class="fa fa-shopping-cart"></i><span class="shopping-cart-count">0</span></a>
-  				    <a href="#" class="header-search"><i class="fa fa-search"></i></a>
-  				    
-  				    <div class="header-search-wrap hide">
-  				      <form>
-  				        <input type="search" />
-                </form>
-  				    </div>
-  				    
+  				    <a href="#" class="header-search js-header-search"><i class="fa fa-search"></i></a>  				    
+  				    <div class="header-search-wrap">
+  				      <?php get_search_form(); ?>
+  				    </div> 				    
 				    </div>
 				    <div class="pull-left social-nav">
   				    <a href="#" class="header-facebook-square"><span class="social-more-info">Facebook</span><i class="fa fa-facebook-square"></i></a>
   				    <a href="#" class="header-instagram"><span class="social-more-info">Instagram</span><i class="fa fa-instagram"></i></a>
 				    </div>
-
 				  </div>
 				
 				  <div class="primary-nav">
-				    
 				    <div class="row">
-				      <div class="col-lg-5 col-md-5 col-sm-5">
-                  
-                   <ul class="pull-right hidden-xs primary-nav-list">
-				      <li><a href="#">Sklep <i class="fa fa-caret-down"></i></a></li>
-				      <li><a href="#">Kreator</a></li>
-				    </ul>
-
-                  
+				      <div class="col-lg-5 col-md-5 col-sm-5">               
+                <ul class="pull-right hidden-xs primary-nav-list">
+    				      <li>
+    				        <a href="#" class="js-show-store-dropdown">Sklep <i class="fa fa-caret-down"></i></a></li>
+    				        
+    				      <li><a href="#">Kreator</a></li>
+                </ul>    
 				      </div>
 				       
 				      <div class="col-lg-2 col-md-2 col-sm-2">
 				        <a class="header-logo" href="<?php echo home_url(); ?>" rel="nofollow">Custi</a>
 				      </div>
 				      
-				      <div class="col-lg-5 col-md-5 col-sm-5">
-                
+				      <div class="col-lg-5 col-md-5 col-sm-5"> 
                 <ul class="pull-left hidden-xs primary-nav-list">
-				      <li><a href="#">Więcej <i class="fa fa-caret-down"></i></a></li>
-				      <li><a href="#">Kontakt</a></li>
-				    </ul>
-                
+                  <li><a href="#">Więcej <i class="fa fa-caret-down"></i></a></li>
+                  <li><a href="#">Kontakt</a></li>
+                </ul>
 				      </div>
 				       
-				    
-				    </div>
-				  
-				  
-				    
-				    
-				    
-				    
-				   				    
+				    </div> 
 				  </div>
-              
+          
+          
+        </div>
+        
+        <div class="store-dropdown hidden-xs">
+        
+          
 
-          		</div>
+        
+          <div class="container">
+        
+            <div class="row">
+              
+              <div class="col-lg-2 col-md-2 col-sm-3">
+                <a href="#" class="store-dropdown-item">
+                  <div class="store-dropdown-thumb">
+                    <img src="http://flickholdr.iwerk.org/400/400/" />
+                  </div>
+                  <h5>Nazwa kategorii</h5>
+                  <p>Opis kategorii czy czegoś tam</p>
+                </a>
+              </div>
+              
+               <div class="col-lg-2 col-md-2 col-sm-3">
+                <a href="#" class="store-dropdown-item">
+                  <div class="store-dropdown-thumb">
+                    <img src="http://flickholdr.iwerk.org/400/400/" />
+                  </div>
+                  <h5>Nazwa kategorii</h5>
+                  <p>Opis kategorii czy czegoś tam</p>
+                </a>
+              </div>
+              
+               <div class="col-lg-2 col-md-2 col-sm-3">
+                <a href="#" class="store-dropdown-item">
+                  <div class="store-dropdown-thumb">
+                    <img src="http://flickholdr.iwerk.org/400/400/" />
+                  </div>
+                  <h5>Nazwa kategorii</h5>
+                  <p>Opis kategorii czy czegoś tam</p>
+                </a>
+              </div>
+              
+               <div class="col-lg-2 col-md-2 col-sm-3">
+                <a href="#" class="store-dropdown-item">
+                  <div class="store-dropdown-thumb">
+                    <img src="http://flickholdr.iwerk.org/400/400/" />
+                  </div>
+                  <h5>Nazwa kategorii</h5>
+                  <p>Opis kategorii czy czegoś tam</p>
+                </a>
+              </div>
+              
+               <div class="col-lg-2 col-md-2 col-sm-3">
+                <a href="#" class="store-dropdown-item">
+                  <div class="store-dropdown-thumb">
+                    <img src="http://flickholdr.iwerk.org/400/400/" />
+                  </div>
+                  <h5>Nazwa kategorii</h5>
+                  <p>Opis kategorii czy czegoś tam</p>
+                </a>
+              </div>
+              
+               <div class="col-lg-2 col-md-2 col-sm-3">
+                <a href="#" class="store-dropdown-item">
+                  <div class="store-dropdown-thumb">
+                    <img src="http://flickholdr.iwerk.org/400/400/" />
+                  </div>
+                  <h5>Nazwa kategorii</h5>
+                  <p>Opis kategorii czy czegoś tam</p>
+                </a>
+              </div>
+              
+               <div class="col-lg-2 col-md-2 col-sm-3">
+                <a href="#" class="store-dropdown-item">
+                  <div class="store-dropdown-thumb">
+                    <img src="http://flickholdr.iwerk.org/400/400/" />
+                  </div>
+                  <h5>Nazwa kategorii</h5>
+                  <p>Opis kategorii czy czegoś tam</p>
+                </a>
+              </div>
+              
+               <div class="col-lg-2 col-md-2 col-sm-3">
+                <a href="#" class="store-dropdown-item">
+                  <div class="store-dropdown-thumb">
+                    <img src="http://flickholdr.iwerk.org/400/400/" />
+                  </div>
+                  <h5>Nazwa kategorii</h5>
+                  <p>Opis kategorii czy czegoś tam</p>
+                </a>
+              </div>
+              
+              
+              
+              
+              
+              
+              
+            </div>
+            
+            </div>
+          </div>
+
+        
 			</header>

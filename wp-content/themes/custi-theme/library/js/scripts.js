@@ -1,3 +1,15 @@
+/*!
+ * hoverIntent v1.8.0 // 2014.06.29 // jQuery v1.9.1+
+ * http://cherne.net/brian/resources/jquery.hoverIntent.html
+ *
+ * You may use hoverIntent under the terms of the MIT license. Basically that
+ * means you are free to use hoverIntent as long as this header is left intact.
+ * Copyright 2007, 2014 Brian Cherne
+ */
+(function($){$.fn.hoverIntent=function(handlerIn,handlerOut,selector){var cfg={interval:100,sensitivity:6,timeout:0};if(typeof handlerIn==="object"){cfg=$.extend(cfg,handlerIn)}else{if($.isFunction(handlerOut)){cfg=$.extend(cfg,{over:handlerIn,out:handlerOut,selector:selector})}else{cfg=$.extend(cfg,{over:handlerIn,out:handlerIn,selector:handlerOut})}}var cX,cY,pX,pY;var track=function(ev){cX=ev.pageX;cY=ev.pageY};var compare=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);if(Math.sqrt((pX-cX)*(pX-cX)+(pY-cY)*(pY-cY))<cfg.sensitivity){$(ob).off("mousemove.hoverIntent",track);ob.hoverIntent_s=true;return cfg.over.apply(ob,[ev])}else{pX=cX;pY=cY;ob.hoverIntent_t=setTimeout(function(){compare(ev,ob)},cfg.interval)}};var delay=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);ob.hoverIntent_s=false;return cfg.out.apply(ob,[ev])};var handleHover=function(e){var ev=$.extend({},e);var ob=this;if(ob.hoverIntent_t){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t)}if(e.type==="mouseenter"){pX=ev.pageX;pY=ev.pageY;$(ob).on("mousemove.hoverIntent",track);if(!ob.hoverIntent_s){ob.hoverIntent_t=setTimeout(function(){compare(ev,ob)},cfg.interval)}}else{$(ob).off("mousemove.hoverIntent",track);if(ob.hoverIntent_s){ob.hoverIntent_t=setTimeout(function(){delay(ev,ob)},cfg.timeout)}}};return this.on({"mouseenter.hoverIntent":handleHover,"mouseleave.hoverIntent":handleHover},cfg.selector)}})(jQuery);
+
+
+
 /*
  * Bones Scripts File
  * Author: Eddie Machado
@@ -20,7 +32,7 @@
 */
 function updateViewportDimensions() {
 	var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName('body')[0],x=w.innerWidth||e.clientWidth||g.clientWidth,y=w.innerHeight||e.clientHeight||g.clientHeight;
-	return { width:x,height:y }
+	return { width:x,height:y };
 }
 // setting the viewport width
 var viewport = updateViewportDimensions();
@@ -102,6 +114,27 @@ function loadGravatars() {
 } // end function
 
 
+function responsiveNav() {
+      
+      viewport = updateViewportDimensions();
+ 
+     // if we're on the home page, we wait the set amount (in function above) then fire the function
+      waitForFinalEvent( function() {
+ 
+       // if we're above or equal to 768 fire this off
+       if( viewport.width >= 768 ) {
+         console.log( 'desktop' );
+       }
+
+       else {
+         // otherwise, let's do this instead
+         console.log( 'mobile' );
+       }
+ 
+     }, timeToWaitForLast, "your-function-identifier-string");
+}
+
+
 /*
  * Put all your regular jQuery in here.
 */
@@ -112,6 +145,34 @@ jQuery(document).ready(function($) {
    * You can remove this if you don't need it
   */
   loadGravatars();
+  
+  responsiveNav();
+  
+  $('.js-header-search').click(function(e){
+    $('#s').toggleClass('expanded');
+    e.preventDefault();
+  });
+  
+  $('#s').attr('placeholder', 'Czego szukasz?');
+  
+  
+
+  
+  $(".js-show-store-dropdown").hoverIntent({
+    over: function(){ $('.store-dropdown').addClass('expanded');},
+    out: function(){ $('.store-dropdown').removeClass('expanded'); },
+    timeout: 700
+  });
+  
+ 
+  
+
+  
+  $(window).resize(function () {  
+    responsiveNav();
+  });
+
+
 
 
 }); /* end of as page load scripts */

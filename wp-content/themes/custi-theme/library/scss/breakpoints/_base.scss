@@ -36,6 +36,11 @@ body {
   margin-top:10px;
 }
 
+.user-nav {
+
+}
+
+
 .secondary-nav a {
   font-size: 22px;  
 }
@@ -43,7 +48,7 @@ body {
 .header-facebook-square,
 .header-instagram {
   width:20px;
-  height:25px;
+  height:27px;
   display:inline-block;
   text-align: right;
   @include transition(width 0.3s);
@@ -51,9 +56,6 @@ body {
   position: relative;
   overflow:hidden;
   
-  &:hover {
-    width:100px;
-  }
   
   .social-more-info {
     font-size:12px;
@@ -63,7 +65,7 @@ body {
     position: absolute;
     top:5px;
     left:-100px;
-    opacity:1;
+    opacity:0;
     -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
     transition: opacity 0.3s, transform 0.3s;
     -webkit-transform: translateX(-100%);
@@ -72,15 +74,7 @@ body {
     height:22px;
     text-align: left;
   }
-  
-  &:hover .social-more-info {
-    opacity:1;
-    -webkit-transition-delay: 0.1s;
-  	transition-delay: 0.1s;
-  	-webkit-transform: translateX(0);
-  	transform: translateX(0);
-  	left:0;
-  }
+
   
 
 }
@@ -130,6 +124,8 @@ body {
 .header-shopping-cart {
   position: relative;
   margin-right:15px;
+  width:30px;
+  height:30px;
 }
 
 .header-shopping-cart span {
@@ -158,21 +154,45 @@ body {
 }
 
 .primary-nav {
-  padding:20px 0;
+  padding:10px 0;
 }
 
 .header-search-wrap {
-  display:inline;
-  width:100px;
+  display:inline-block;
+  position: relative;
+  top:-3px;
+  
+  & .searchform label,
+  & #searchsubmit {
+    display:none;
+  }
 }
 
-.header-search-wrap input[type="search"]{
-  display:inline;
+
+.user-nav .header-search-wrap input[type="text"] {
+  display:block;
   background:$white;
   border:1px solid $border-color;
   height:30px;
-  width:200px;
+  width:0px;
   margin-right:0;
+  padding:3px 5px;
+  line-height: 30px;
+  font-size:14px;
+  margin-left:5px;
+  @include transition(all 0.2s ease-in-out);
+  opacity:0;
+  margin-right:-15px;
+  visibility: hidden;
+
+  
+}
+
+.header-search-wrap input[type="text"].expanded {
+  width:150px;
+  opacity:1;
+  margin-right:0;
+  visibility: visible;
 }
 
 
@@ -1002,8 +1022,8 @@ SIDEBARS & ASIDES
 FOOTER STYLES
 *********************/
 
-.footer {
-    background: $custi-dark-green;
+.footer-wrap {
+  background: $custi-dark-green;
 }
 
 .footer-logo {
