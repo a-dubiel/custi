@@ -266,25 +266,22 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
-.store-dropdown {
+.store-dropdown, .more-info-dropdown {
   position: absolute;
   z-index: 5;
-  height: 320px;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  opacity: 0;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  overflow: hidden;
-  visibility: hidden;
-  padding-bottom: 20px; }
-
-.store-dropdown.expanded, .store-dropdown:hover {
   height: auto;
-  opacity: 1;
-  visibility: visible;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s; }
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+  padding-bottom: 20px;
+  transform: translateY(-100%); }
+
+.store-dropdown.expanded, .store-dropdown:hover,
+.more-info-dropdown.expanded, .more-info-dropdown:hover {
+  border-bottom: 1px solid #ededed;
+  transform: translateY(0); }
 
 .store-dropdown-item {
   text-decoration: none;
@@ -314,15 +311,31 @@ NAVIGATION STYLES
 
 .store-dropdown-item h5 {
   margin: 7px 0 0 0;
-  font-size: 0.750em;
+  font-size: 0.875em;
   text-transform: none;
   letter-spacing: normal;
-  line-height: 1em; }
+  line-height: 1em;
+  color: #333333; }
 
 .store-dropdown-item p {
   color: #7c7c7c;
   font-size: 0.750em;
   margin: 0; }
+
+.more-info-heading {
+  font-size: 1em;
+  margin: 0;
+  font-weight: 400; }
+
+.more-info-menu {
+  padding-top: 20px; }
+  .more-info-menu ul {
+    margin-top: 0; }
+  .more-info-menu li a {
+    color: #79ac3c;
+    text-decoration: none; }
+  .more-info-menu li a:hover {
+    text-decoration: underline; }
 
 .nav {
   border: 0;
@@ -433,6 +446,8 @@ FOOTER STYLES
 
 .footer-nav li a {
   margin: 0 10px; }
+  .footer-nav li a:hover {
+    text-decoration: underline; }
 
 .footer-nav {
   margin-top: 15px; }

@@ -1914,7 +1914,10 @@ body {
   -webkit-font-smoothing: antialiased; }
 
 .primary-nav, .secondary-nav {
-  border-bottom: 1px solid #ededed; }
+  border-bottom: 1px solid #ededed;
+  background: white;
+  position: relative;
+  z-index: 10; }
 
 .secondary-nav {
   height: 50px; }
@@ -1969,7 +1972,7 @@ body {
   color: #7c7c7c; }
 
 .header-search:hover .fa {
-  color: #1c1c1c;
+  color: #333333;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; }
 .header-search a:active .fa {
@@ -2029,13 +2032,11 @@ body {
   margin-left: 5px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  opacity: 0;
   margin-right: -15px;
   visibility: hidden; }
 
 .header-search-wrap input[type="text"].expanded {
   width: 150px;
-  opacity: 1;
   margin-right: 0;
   visibility: visible; }
 
@@ -2085,12 +2086,12 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #333333;
+  color: #79ac3c;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #1c1c1c; }
+    color: #2b572a; }
   a:link, a:visited:link {
     /*
     this highlights links on iPhones/iPads.
@@ -2522,6 +2523,8 @@ FOOTER STYLES
 .footer-nav li a {
   color: #c1ef8a;
   text-align: center; }
+  .footer-nav li a:hover {
+    color: #c1ef8a; }
 
 .footer-nav li {
   border-bottom: 1px solid #79ac3c; }
@@ -2732,25 +2735,26 @@ you can add resource intensive styles.
   /*********************
   NAVIGATION STYLES
   *********************/
-  .store-dropdown {
+  .store-dropdown, .more-info-dropdown {
     position: absolute;
     z-index: 5;
-    height: 320px;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    opacity: 0;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    overflow: hidden;
-    visibility: hidden;
-    padding-bottom: 20px; }
-
-  .store-dropdown.expanded, .store-dropdown:hover {
     height: auto;
-    opacity: 1;
-    visibility: visible;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s; }
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    padding-bottom: 20px;
+    -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+            transform: translateY(-100%); }
+
+  .store-dropdown.expanded, .store-dropdown:hover,
+  .more-info-dropdown.expanded, .more-info-dropdown:hover {
+    border-bottom: 1px solid #ededed;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0); }
 
   .store-dropdown-item {
     text-decoration: none;
@@ -2780,15 +2784,31 @@ you can add resource intensive styles.
 
   .store-dropdown-item h5 {
     margin: 7px 0 0 0;
-    font-size: 0.750em;
+    font-size: 0.875em;
     text-transform: none;
     letter-spacing: normal;
-    line-height: 1em; }
+    line-height: 1em;
+    color: #333333; }
 
   .store-dropdown-item p {
     color: #7c7c7c;
     font-size: 0.750em;
     margin: 0; }
+
+  .more-info-heading {
+    font-size: 1em;
+    margin: 0;
+    font-weight: 400; }
+
+  .more-info-menu {
+    padding-top: 20px; }
+    .more-info-menu ul {
+      margin-top: 0; }
+    .more-info-menu li a {
+      color: #79ac3c;
+      text-decoration: none; }
+    .more-info-menu li a:hover {
+      text-decoration: underline; }
 
   .nav {
     border: 0;
@@ -2899,6 +2919,8 @@ you can add resource intensive styles.
 
   .footer-nav li a {
     margin: 0 10px; }
+    .footer-nav li a:hover {
+      text-decoration: underline; }
 
   .footer-nav {
     margin-top: 15px; }

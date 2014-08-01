@@ -26,6 +26,9 @@ body {
 
 .primary-nav, .secondary-nav {
   border-bottom: 1px solid $border-color;
+  background: $white;
+  position: relative;
+  z-index:10;
 }
 
 .secondary-nav {
@@ -74,9 +77,6 @@ body {
     height:22px;
     text-align: left;
   }
-
-  
-
 }
 
 .header-instagram {
@@ -108,10 +108,10 @@ body {
 .header-search {
 
   &:hover .fa {
-  color: $link-hover;
+  color: $black;
    @include transition(all 0.3s ease-in-out);
   }
-  
+
   a:active .fa {
     color:red;
   }
@@ -181,16 +181,12 @@ body {
   font-size:14px;
   margin-left:5px;
   @include transition(all 0.2s ease-in-out);
-  opacity:0;
   margin-right:-15px;
-  visibility: hidden;
-
-  
+  visibility: hidden;  
 }
 
 .header-search-wrap input[type="text"].expanded {
   width:150px;
-  opacity:1;
   margin-right:0;
   visibility: visible;
 }
@@ -1038,6 +1034,10 @@ FOOTER STYLES
 .footer-nav li a {
   color: $custi-light-green;
   text-align: center;
+  
+  &:hover {
+    color:$custi-light-green;
+  }
 }
 
 .footer-nav li {

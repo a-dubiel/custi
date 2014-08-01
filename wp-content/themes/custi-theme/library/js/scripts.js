@@ -146,7 +146,7 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
   
-  responsiveNav();
+  //responsiveNav();
   
   $('.js-header-search').click(function(e){
     $('#s').toggleClass('expanded');
@@ -161,6 +161,12 @@ jQuery(document).ready(function($) {
   $(".js-show-store-dropdown").hoverIntent({
     over: function(){ $('.store-dropdown').addClass('expanded');},
     out: function(){ $('.store-dropdown').removeClass('expanded'); },
+    timeout: 700
+  });
+  
+  $(".js-show-more-info-dropdown").hoverIntent({
+    over: function(){ $('.more-info-dropdown').addClass('expanded');},
+    out: function(){ $('.more-info-dropdown').removeClass('expanded'); },
     timeout: 700
   });
   

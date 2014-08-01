@@ -16,6 +16,11 @@ COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
+$custi-green:       #79ac3c;
+$custi-dark-green:  #2b572a;
+$custi-light-green: #c1ef8a;
+$custi-blue:        #44b3d7;
+$custi-yellow:      #ccba3b;
 
 $alert-yellow:      #ebe16f;
 $alert-red:         #fbe3e4;
@@ -37,8 +42,8 @@ $green:             #7dd667;
 $bones-pink:        #f01d4f;
 $blue:              #2980b9;
 
-$link-color:        $black;
-$link-hover:        darken($link-color, 9%);
+$link-color:        $custi-green;
+$link-hover:        $custi-dark-green;
 
 $gray-hover:        darken($gray, 9%);
 
@@ -48,11 +53,7 @@ $disabled-gray:     #cfcfcf;
 $facebook:          #3b5998;
 $instagram:         #3f729b;
 
-$custi-green:       #79ac3c;
-$custi-dark-green:  #2b572a;
-$custi-light-green: #c1ef8a;
-$custi-blue:        #44b3d7;
-$custi-yellow:      #ccba3b;
+
 
 
 /*

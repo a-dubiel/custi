@@ -129,25 +129,25 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
-.store-dropdown {
+.store-dropdown, .more-info-dropdown {
   position: absolute;
   z-index:5;
-  height:320px;
+  height:auto;
   width:100%;
-  background: rgba(255,255,255,0.9);
-  opacity:0;
-  @include transition(all 0.5s);
+  background: rgba(255,255,255,0.95);
+  @include transition(all 0.5s ease-in-out);
   overflow:hidden;
-  visibility: hidden;
   padding-bottom:20px;
-
+  transform: translateY(-100%);
+  
 }
 
-.store-dropdown.expanded, .store-dropdown:hover {
-  height:auto;
-  opacity:1;
-  visibility: visible;
-  @include transition(all 0.5s);
+.store-dropdown.expanded, .store-dropdown:hover,
+.more-info-dropdown.expanded, .more-info-dropdown:hover  {
+
+  border-bottom:1px solid $border-color;
+  transform: translateY(0);
+
 }
 
 .store-dropdown-item {
@@ -185,10 +185,11 @@ NAVIGATION STYLES
 
 .store-dropdown-item h5 {
   margin:7px 0 0 0;
-  font-size:0.750em;
+  font-size:0.875em;
   text-transform: none;
   letter-spacing: normal;
   line-height:1em;
+  color:$black;
 }
 
 .store-dropdown-item p {
@@ -196,6 +197,30 @@ NAVIGATION STYLES
   font-size:0.750em;
   margin:0;
 }
+
+.more-info-heading {
+  font-size:1em;
+  margin:0;
+  font-weight:400;
+}
+
+.more-info-menu {
+  padding-top:20px;
+  
+  ul {
+    margin-top:0;
+  }
+  
+  li a {
+    color:$custi-green;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    text-decoration: underline;
+  } 
+}
+
 
 
 
@@ -447,6 +472,10 @@ FOOTER STYLES
 
 .footer-nav li a {
   margin:0 10px;
+  
+  &:hover {
+   text-decoration: underline; 
+  }
 }
 
 .footer-nav {

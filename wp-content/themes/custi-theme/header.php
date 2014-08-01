@@ -42,8 +42,9 @@
 
 	<body <?php body_class(); ?>>
 		<header class="header" role="banner">    
-      <div class="container">
+          <nav>
 				  <div class="secondary-nav">
+				    <div class="container">
 				    <div class="pull-right user-nav">
   				    <a href="#" class="header-shopping-cart"><i class="fa fa-shopping-cart"></i><span class="shopping-cart-count">0</span></a>
   				    <a href="#" class="header-search js-header-search"><i class="fa fa-search"></i></a>  				    
@@ -55,9 +56,11 @@
   				    <a href="#" class="header-facebook-square"><span class="social-more-info">Facebook</span><i class="fa fa-facebook-square"></i></a>
   				    <a href="#" class="header-instagram"><span class="social-more-info">Instagram</span><i class="fa fa-instagram"></i></a>
 				    </div>
+				    </div>
 				  </div>
 				
 				  <div class="primary-nav">
+				    <div class="container">
 				    <div class="row">
 				      <div class="col-lg-5 col-md-5 col-sm-5">               
                 <ul class="pull-right hidden-xs primary-nav-list">
@@ -74,22 +77,17 @@
 				      
 				      <div class="col-lg-5 col-md-5 col-sm-5"> 
                 <ul class="pull-left hidden-xs primary-nav-list">
-                  <li><a href="#">Więcej <i class="fa fa-caret-down"></i></a></li>
+                  <li><a href="#" class="js-show-more-info-dropdown">Więcej <i class="fa fa-caret-down"></i></a></li>
                   <li><a href="#">Kontakt</a></li>
                 </ul>
 				      </div>
 				       
 				    </div> 
 				  </div>
-          
-          
+				  </div>
         </div>
-        
-        <div class="store-dropdown hidden-xs">
-        
-          
-
-        
+        </nav>
+        <div class="store-dropdown hidden-xs">        
           <div class="container">
         
             <div class="row">
@@ -154,36 +152,42 @@
                 </a>
               </div>
               
-               <div class="col-lg-2 col-md-2 col-sm-3">
-                <a href="#" class="store-dropdown-item">
-                  <div class="store-dropdown-thumb">
-                    <img src="http://flickholdr.iwerk.org/400/400/" />
-                  </div>
-                  <h5>Nazwa kategorii</h5>
-                  <p>Opis kategorii czy czegoś tam</p>
-                </a>
-              </div>
-              
-               <div class="col-lg-2 col-md-2 col-sm-3">
-                <a href="#" class="store-dropdown-item">
-                  <div class="store-dropdown-thumb">
-                    <img src="http://flickholdr.iwerk.org/400/400/" />
-                  </div>
-                  <h5>Nazwa kategorii</h5>
-                  <p>Opis kategorii czy czegoś tam</p>
-                </a>
-              </div>
-              
-              
-              
-              
-              
-              
-              
             </div>
             
             </div>
           </div>
-
-        
+          
+          <div class="more-info-dropdown hidden-xs">        
+            <div class="container">
+              <div class="row">
+                 <div class="col-lg-3 col-md-3 col-sm-3 more-info-menu">
+                    <h3 class="more-info-heading">Poznaj Custi</h3>
+                    <ul>
+                      <li><a href="#">Blog</a></li>
+                      <li><a href="#">O Nas</a></li>
+                      <li><a href="#">Opinie</a></li>
+                      <li><a href="#">FAQ</a></li>
+                      <li><a href="#">Kontakt</a></li>
+                      <li><a href="#">Praca</a></li>
+                    </ul>
+                 </div>
+                 
+                 <div class="col-lg-3 col-md-3 col-sm-3 more-info-menu">
+                    <h3 class="more-info-heading">Zrób Sam</h3>
+                    
+                 </div>
+                 
+                 <div class="col-lg-3 col-md-3 col-sm-3 more-info-menu">
+                    <h3 class="more-info-heading">Facebook</h3>
+                    
+                 </div>
+                 
+                 <div class="col-lg-3 col-md-3 col-sm-3 more-info-menu">
+                    <h3 class="more-info-heading">Informacje</h3>
+                    
+                 </div>
+              </div>
+            </div>
+     
+          
 			</header>
