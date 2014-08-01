@@ -2163,6 +2163,11 @@ and more scalable.
     background: #79ac3c;
     color: white; }
 
+.js-mobile-nav {
+  position: absolute;
+  top: 0;
+  left: -9999px; }
+
 .nav {
   border-bottom: 0;
   margin: 0;
