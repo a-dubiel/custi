@@ -147,8 +147,7 @@ em,
  */
 hr {
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0; }
 
 /*
@@ -158,8 +157,7 @@ p {
   -webkit-hyphens: auto;
   -epub-hyphens: auto;
   -moz-hyphens: auto;
-  -ms-hyphens: auto;
-      hyphens: auto; }
+  hyphens: auto; }
 
 /*
  * Addresses margins set differently in IE6/7.
@@ -358,9 +356,7 @@ html input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */ }
@@ -522,14 +518,14 @@ p {
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
-  -ms-hyphens: auto;
-      hyphens: auto;
+  hyphens: auto;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 3;
   -webkit-font-feature-settings: "liga", "dlig";
   -moz-font-feature-settings: "liga=1, dlig=1";
   -ms-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
   font-feature-settings: "liga", "dlig"; }
 
 /******************************************************************
@@ -1647,8 +1643,7 @@ textarea,
   font-size: 0.875em;
   color: #333333;
   border-radius: 3px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   border: 0;
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-appearance: none; }
@@ -1952,8 +1947,7 @@ body {
     -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
     transition: opacity 0.3s, transform 0.3s;
     -webkit-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-        transform: translateX(-100%);
+    transform: translateX(-100%);
     width: 100px;
     height: 22px;
     text-align: left; }
@@ -1999,6 +1993,9 @@ body {
   text-decoration: none;
   text-align: center;
   font-weight: 600;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
   border-radius: 3px; }
 
 .header-logo {
@@ -2152,6 +2149,20 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
+.mobile-nav-icon {
+  margin-top: 20px;
+  font-size: 30px;
+  color: #79ac3c;
+  padding: 0;
+  border-radius: 3px;
+  height: 40px;
+  width: 40px;
+  line-height: 43px;
+  text-align: center; }
+  .mobile-nav-icon.mobile-nav-active {
+    background: #79ac3c;
+    color: white; }
+
 .nav {
   border-bottom: 0;
   margin: 0;
@@ -2717,8 +2728,7 @@ you can add resource intensive styles.
       -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
       transition: opacity 0.3s, transform 0.3s;
       -webkit-transform: translateX(-100%);
-      -ms-transform: translateX(-100%);
-          transform: translateX(-100%);
+      transform: translateX(-100%);
       width: 100px;
       height: 22px;
       text-align: left; }
@@ -2728,8 +2738,7 @@ you can add resource intensive styles.
       -webkit-transition-delay: 0.1s;
       transition-delay: 0.1s;
       -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-          transform: translateX(0);
+      transform: translateX(0);
       left: 0; }
 
   /*********************
@@ -2745,16 +2754,12 @@ you can add resource intensive styles.
     transition: all 0.5s ease-in-out;
     overflow: hidden;
     padding-bottom: 20px;
-    -webkit-transform: translateY(-100%);
-        -ms-transform: translateY(-100%);
-            transform: translateY(-100%); }
+    transform: translateY(-100%); }
 
   .store-dropdown.expanded, .store-dropdown:hover,
   .more-info-dropdown.expanded, .more-info-dropdown:hover {
     border-bottom: 1px solid #ededed;
-    -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0); }
+    transform: translateY(0); }
 
   .store-dropdown-item {
     text-decoration: none;
@@ -3020,18 +3025,15 @@ query for retina AND a certain size if you want. Go Nuts.
   */
   .header-logo {
     background: url("../images/logo@2x.png") no-repeat;
-    -webkit-background-size: 87px 82px;
-            background-size: 87px 82px; }
+    background-size: 87px 82px; }
 
   .mountains {
     background: url("../images/footer@2x.png") no-repeat;
-    -webkit-background-size: auto 170px;
-            background-size: auto 170px; }
+    background-size: auto 170px; }
 
   .footer-logo {
     background: url("../images/footer-logo@2x.png") no-repeat;
-    -webkit-background-size: 63px 59px;
-            background-size: 63px 59px; } }
+    background-size: 63px 59px; } }
 /*********************
 PRINT STYLESHEET
 Feel free to customize this. Remember to add things that won't make
@@ -3054,8 +3056,7 @@ be set to display none.
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
-    -webkit-filter: none !important;
-            filter: none !important;
+    filter: none !important;
     -ms-filter: none !important; }
 
   a, a:visited {

@@ -155,6 +155,11 @@ jQuery(document).ready(function($) {
   
   $('#s').attr('placeholder', 'Czego szukasz?');
   
+  $('.mobile-nav-icon').on('click', function(){
+      $(this).toggleClass('mobile-nav-active');
+      $('#mobile-nav').blur();
+      return false;
+  });
   
 
   

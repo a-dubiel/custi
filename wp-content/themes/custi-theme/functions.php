@@ -17,6 +17,8 @@ require_once( 'library/custom-post-type.php' );
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 // require_once( 'library/admin.php' );
 
+
+
 /*********************
 LAUNCH BONES
 Let's get everything up and running.
@@ -191,7 +193,7 @@ function bones_comments( $comment, $args, $depth ) {
 } // don't remove this bracket!
 
 
-
+include_once( 'library/nav-menu-dropdown.php' );
 
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

@@ -42,6 +42,8 @@
 
 	<body <?php body_class(); ?>>
 		<header class="header" role="banner">    
+		
+		
           <nav>
 				  <div class="secondary-nav">
 				    <div class="container">
@@ -61,6 +63,7 @@
 				
 				  <div class="primary-nav">
 				    <div class="container">
+        
 				    <div class="row">
 				      <div class="col-lg-5 col-md-5 col-sm-5">               
                 <ul class="pull-right hidden-xs primary-nav-list">
@@ -72,6 +75,9 @@
 				      </div>
 				       
 				      <div class="col-lg-2 col-md-2 col-sm-2">
+				        <div class="mobile-nav-icon visible-xs pull-right">
+                  <i class="fa fa-navicon"></i>
+                </div>
 				        <a class="header-logo" href="<?php echo home_url(); ?>" rel="nofollow">Custi</a>
 				      </div>
 				      
@@ -80,13 +86,30 @@
                   <li><a href="#" class="js-show-more-info-dropdown">Więcej <i class="fa fa-caret-down"></i></a></li>
                   <li><a href="#">Kontakt</a></li>
                 </ul>
+                
+                
+                <?php
+                  wp_nav_menu( array(
+                    'theme_location' => 'mobile',
+                    'walker'         => new SelectBox_Menu_Walker(),
+                    'items_wrap'     => '<div class="hide"><form><select id="mobile-nav" onchange="if (this.value) window.location.href=this.value">%3$s</select></form></div>',
+                    'container' => ''
+                  ) ); 
+                  ?>
 				      </div>
 				       
 				    </div> 
 				  </div>
 				  </div>
         </div>
+        
+        
+        
+        
         </nav>
+        
+       
+        
         <div class="store-dropdown hidden-xs">        
           <div class="container">
         
