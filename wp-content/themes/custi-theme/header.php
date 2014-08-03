@@ -44,7 +44,7 @@
 		<header class="header" role="banner">    
 		
 		
-          <nav>
+          <nav role="navigation">
 				  <div class="secondary-nav">
 				    <div class="container">
 				    <div class="pull-right user-nav">
@@ -75,7 +75,7 @@
 				      </div>
 				       
 				      <div class="col-lg-2 col-md-2 col-sm-2">
-				        <div class="mobile-nav-icon visible-xs pull-right">
+				        <div class="mobile-nav-icon pull-right">
                   <i class="fa fa-navicon"></i>
                 </div>
 				        <a class="header-logo" href="<?php echo home_url(); ?>" rel="nofollow">Custi</a>
@@ -92,7 +92,7 @@
                   wp_nav_menu( array(
                     'theme_location' => 'mobile',
                     'walker'         => new SelectBox_Menu_Walker(),
-                    'items_wrap'     => '<div class=""><form><select class="js-mobile-nav" onchange="if (this.value) window.location.href=this.value">%3$s</select></form></div>',
+                    'items_wrap'     => '<div class="mobile-nav-wrap"><form><select class="js-mobile-nav" onchange="if (this.value) window.location.href=this.value"><option value="">-- Menu --</option>%3$s</select></form></div>',
                     'container' => ''
                   ) ); 
                   ?>

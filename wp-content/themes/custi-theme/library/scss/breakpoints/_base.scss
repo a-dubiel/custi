@@ -351,12 +351,49 @@ and more scalable.
   }
 }
 
-.js-mobile-nav {
-  position: absolute;
-  top: 0;
-  left: -9999px;
+
+.ua-mobile-iphone {
+  
+  .js-mobile-nav {
+    visibility: visible;
+    position: absolute;
+    top: 0px;
+    left: -999em;
+  }
 }
 
+html:not(.ua-mobile-iphone) {
+
+  .mobile-nav-wrap {
+    width:100%;
+    text-align: center;
+  }
+  
+  .js-mobile-nav {
+    visibility: visible;
+    position: relative;
+    margin-top:20px;
+    margin-bottom:10px;
+    display:inline;
+  }
+  
+  .mobile-nav-icon {
+    display:none;
+  }
+}
+
+.ua-mobile-android {
+  .js-mobile-nav{
+      background: $border-color;
+      padding:5px;
+      display: inline-block;
+      text-align: center;
+      -webkit-appearance: menulist-text;
+      font-size:0.875em;
+      width:150px;
+  }
+
+}
 
 
 

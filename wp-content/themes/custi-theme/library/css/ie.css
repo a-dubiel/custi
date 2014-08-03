@@ -337,6 +337,9 @@ NAVIGATION STYLES
   .more-info-menu li a:hover {
     text-decoration: underline; }
 
+.mobile-nav-wrap {
+  display: none; }
+
 .nav {
   border: 0;
   /* end .menu ul li */

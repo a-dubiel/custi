@@ -1,3 +1,6 @@
+
+
+
 /*
  * jquery.simulate - simulate browser mouse and keyboard events
  *
@@ -273,6 +276,7 @@ function loadGravatars() {
 function responsiveNav() {
       
       viewport = updateViewportDimensions();
+      var isDesktop = false;
  
      // if we're on the home page, we wait the set amount (in function above) then fire the function
       waitForFinalEvent( function() {
@@ -280,13 +284,15 @@ function responsiveNav() {
        // if we're above or equal to 768 fire this off
        if( viewport.width >= 768 ) {
          console.log( 'desktop' );
-       }
+         isDesktop = true;
+        
+         
+         
+        }
+        else {
+          console.log( 'desktop' );
+        }
 
-       else {
-         // otherwise, let's do this instead
-         console.log( 'mobile' );
-       }
- 
      }, timeToWaitForLast, "your-function-identifier-string");
 }
 
@@ -302,6 +308,9 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
   
+  
+  //alert($('html')[0].classList);
+  
   //responsiveNav();
   
   $('.js-header-search').click(function(e){
@@ -314,14 +323,18 @@ jQuery(document).ready(function($) {
   $('.mobile-nav-icon').on('click', function(){
       var el = $(this);
       
+     
+      
       if(el.hasClass('mobile-nav-active')) {
+        $('.js-mobile-nav').focusout();
         el.removeClass('mobile-nav-active');
-        $(".js-mobile-nav").simulate('mouseup');
+       
      
       }
       else {
+        $('.js-mobile-nav').focus();
         el.addClass('mobile-nav-active');
-        $(".js-mobile-nav").simulate('mousedown');
+  
       }
       
       return false;
@@ -342,7 +355,7 @@ jQuery(document).ready(function($) {
   });
   
  
-  
+
 
   
   $(window).resize(function () {  
