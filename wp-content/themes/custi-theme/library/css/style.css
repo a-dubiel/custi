@@ -2185,6 +2185,18 @@ html:not(.ua-mobile-iphone) .mobile-nav-icon {
   font-size: 0.875em;
   width: 150px; }
 
+.breadcrumbs {
+  border-bottom: 1px solid #ededed;
+  padding: 12px 0;
+  font-size: 0.875em; }
+  .breadcrumbs a {
+    font-weight: 600;
+    text-decoration: none;
+    color: #333333; }
+  .breadcrumbs a:hover {
+    text-decoration: underline;
+    color: #333333; }
+
 .nav {
   border-bottom: 0;
   margin: 0;

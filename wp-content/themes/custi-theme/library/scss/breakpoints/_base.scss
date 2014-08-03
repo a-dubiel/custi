@@ -39,11 +39,6 @@ body {
   margin-top:10px;
 }
 
-.user-nav {
-
-}
-
-
 .secondary-nav a {
   font-size: 22px;  
 }
@@ -392,7 +387,23 @@ html:not(.ua-mobile-iphone) {
       font-size:0.875em;
       width:150px;
   }
+}
 
+.breadcrumbs {
+  border-bottom: 1px solid $border-color;
+  padding:12px 0;
+  font-size:0.875em;
+  
+  a {
+    font-weight: 600;
+    text-decoration: none;
+    color: $black;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: $black;
+  }
 }
 
 

@@ -25,6 +25,6 @@ switch( $template ) {
 		get_sidebar( 'content' );
 		break;
 	default :
-		echo '</div></div>';
+		echo '</div>';
 		break;
 }

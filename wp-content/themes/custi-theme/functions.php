@@ -196,4 +196,19 @@ function bones_comments( $comment, $args, $depth ) {
 include_once( 'library/nav-menu-dropdown.php' );
 
 
+
+function my_woocommerce_breadcrumbs() {
+    return array(
+            'delimiter'   => ' &#47; ',
+            'wrap_before' => '<nav class="breadcrumbs" itemprop="breadcrumb"><div class="container">',
+            'wrap_after'  => '</div></nav>',
+            'before'      => '',
+            'after'       => '',
+            'home'        => _x( 'Strona Główna', 'breadcrumb', 'woocommerce' ),
+        );
+}
+
+add_filter( 'woocommerce_breadcrumb_defaults', 'my_woocommerce_breadcrumbs' );
+
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>

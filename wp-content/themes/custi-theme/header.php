@@ -11,7 +11,7 @@
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title><?php wp_title(''); ?></title>
+		<title><?php wp_title('|'); ?></title>
 
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
@@ -68,7 +68,7 @@
 				      <div class="col-lg-5 col-md-5 col-sm-5">               
                 <ul class="pull-right hidden-xs primary-nav-list">
     				      <li>
-    				        <a href="#" class="js-show-store-dropdown">Sklep <i class="fa fa-caret-down"></i></a></li>
+    				        <a href="<?php echo home_url(); ?>/sklep" class="js-show-store-dropdown">Sklep <i class="fa fa-caret-down"></i></a></li>
     				        
     				      <li><a href="#">Kreator</a></li>
                 </ul>    

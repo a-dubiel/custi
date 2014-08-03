@@ -223,7 +223,8 @@ function bones_theme_support() {
 		array(
 			'main-nav' => __( 'The Main Menu', 'bonestheme' ),   // main nav in header
 			'footer-links' => __( 'Footer Links', 'bonestheme' ), // secondary nav in footer
-			'mobile' => __('Mobile', 'bonestheme')
+			'mobile' => __('Mobile', 'bonestheme'),
+			'product-categories' => __('Product Categories')
 		)
 	);
 } /* end bones theme support */

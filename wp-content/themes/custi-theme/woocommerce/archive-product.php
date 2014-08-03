@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 get_header( 'shop' ); ?>
 
+
 	<?php
 		/**
 		 * woocommerce_before_main_content hook
@@ -22,7 +23,31 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_before_main_content' );
 	?>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+          <aside class="shop-sidebar">
+            <h5>Kategorie</h5>
+            <nav role="navigation">
+  						<?php wp_nav_menu(array(
+      					'container' => '',                              // remove nav container
+      					'container_class' => '',         // class of container (should you choose to use it)
+      					'menu' => __( 'Product Categories', 'bonestheme' ),   // nav name
+      					'menu_class' => 'product-categories-nav',            // adding custom nav class
+      					'theme_location' => 'product-categories',             // where it's located in the theme
+      					'before' => '',                                 // before the menu
+          			'after' => '',                                  // after the menu
+          			'link_before' => '',                            // before each link
+          			'link_after' => '',                             // after each link
+          			'depth' => 0,                                   // limit the depth of the nav
+      					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
+  						)); ?>
+            </nav>
+          </aside>          
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-3">
 
+    
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
 			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
@@ -69,7 +94,9 @@ get_header( 'shop' ); ?>
 			<?php wc_get_template( 'loop/no-products-found.php' ); ?>
 
 		<?php endif; ?>
-
+        </div>
+		  </div>
+    </div>
 	<?php
 		/**
 		 * woocommerce_after_main_content hook
@@ -85,7 +112,7 @@ get_header( 'shop' ); ?>
 		 *
 		 * @hooked woocommerce_get_sidebar - 10
 		 */
-		do_action( 'woocommerce_sidebar' );
+	//	do_action( 'woocommerce_sidebar' );
 	?>
 
 <?php get_footer( 'shop' ); ?>
