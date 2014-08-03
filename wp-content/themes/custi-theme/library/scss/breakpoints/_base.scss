@@ -406,6 +406,47 @@ html:not(.ua-mobile-iphone) {
   }
 }
 
+.woocommerce ul.products, .woocommerce-page ul.products {
+  margin:0;
+}
+
+.shop-sidebar {
+  
+  text-align: center;
+  
+  h5 {
+    font-size:1.125em;
+    text-transform: none;
+    letter-spacing: normal;
+    color: $gray;
+    line-height:1em;
+    margin:20px 0;
+  }
+  
+  .product-categories-nav {
+    
+    a {
+      color:$black;
+      text-decoration: none;
+      border-bottom:1px solid $border-color;
+      display: block;
+      padding:10px 0;
+      width: 100%;
+      
+    }
+    
+    a:hover {
+      color:$custi-green;
+    }
+    
+    .current-menu-item a {
+      font-weight:700;
+    }
+    
+    
+  }
+}
+
 
 
 

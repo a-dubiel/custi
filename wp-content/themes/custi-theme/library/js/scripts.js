@@ -322,13 +322,11 @@ jQuery(document).ready(function($) {
   
   $('.mobile-nav-icon').on('click', function(){
       var el = $(this);
-      
-     
-      
+ 
       if(el.hasClass('mobile-nav-active')) {
         $('.js-mobile-nav').focusout();
         el.removeClass('mobile-nav-active');
-       
+     
      
       }
       else {

@@ -340,6 +340,16 @@ NAVIGATION STYLES
 .mobile-nav-wrap {
   display: none; }
 
+.shop-sidebar {
+  text-align: left; }
+  .shop-sidebar .product-categories-nav {
+    margin-left: 20px; }
+    .shop-sidebar .product-categories-nav li {
+      margin-bottom: 5px; }
+    .shop-sidebar .product-categories-nav a {
+      display: inline;
+      border-bottom: 0; }
+
 .nav {
   border: 0;
   /* end .menu ul li */

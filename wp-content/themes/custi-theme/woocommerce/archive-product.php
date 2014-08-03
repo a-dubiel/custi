@@ -25,27 +25,7 @@ get_header( 'shop' ); ?>
 	?>
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3">
-          <aside class="shop-sidebar">
-            <h5>Kategorie</h5>
-            <nav role="navigation">
-  						<?php wp_nav_menu(array(
-      					'container' => '',                              // remove nav container
-      					'container_class' => '',         // class of container (should you choose to use it)
-      					'menu' => __( 'Product Categories', 'bonestheme' ),   // nav name
-      					'menu_class' => 'product-categories-nav',            // adding custom nav class
-      					'theme_location' => 'product-categories',             // where it's located in the theme
-      					'before' => '',                                 // before the menu
-          			'after' => '',                                  // after the menu
-          			'link_before' => '',                            // before each link
-          			'link_after' => '',                             // after each link
-          			'depth' => 0,                                   // limit the depth of the nav
-      					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
-  						)); ?>
-            </nav>
-          </aside>          
-        </div>
-        <div class="col-lg-9 col-md-9 col-sm-3">
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 pull-right">
 
     
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
@@ -95,6 +75,29 @@ get_header( 'shop' ); ?>
 
 		<?php endif; ?>
         </div>
+        
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-left">
+          <aside class="shop-sidebar">
+            <h5>Kategorie</h5>
+            <nav role="navigation">
+  						<?php wp_nav_menu(array(
+      					'container' => '',                              // remove nav container
+      					'container_class' => '',         // class of container (should you choose to use it)
+      					'menu' => __( 'Product Categories', 'bonestheme' ),   // nav name
+      					'menu_class' => 'product-categories-nav',            // adding custom nav class
+      					'theme_location' => 'product-categories',             // where it's located in the theme
+      					'before' => '',                                 // before the menu
+          			'after' => '',                                  // after the menu
+          			'link_before' => '',                            // before each link
+          			'link_after' => '',                             // after each link
+          			'depth' => 0,                                   // limit the depth of the nav
+      					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
+  						)); ?>
+            </nav>
+          </aside>          
+        </div>
+
+        
 		  </div>
     </div>
 	<?php

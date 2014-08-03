@@ -2197,6 +2197,30 @@ html:not(.ua-mobile-iphone) .mobile-nav-icon {
     text-decoration: underline;
     color: #333333; }
 
+.woocommerce ul.products, .woocommerce-page ul.products {
+  margin: 0; }
+
+.shop-sidebar {
+  text-align: center; }
+  .shop-sidebar h5 {
+    font-size: 1.125em;
+    text-transform: none;
+    letter-spacing: normal;
+    color: #7c7c7c;
+    line-height: 1em;
+    margin: 20px 0; }
+  .shop-sidebar .product-categories-nav a {
+    color: #333333;
+    text-decoration: none;
+    border-bottom: 1px solid #ededed;
+    display: block;
+    padding: 10px 0;
+    width: 100%; }
+  .shop-sidebar .product-categories-nav a:hover {
+    color: #79ac3c; }
+  .shop-sidebar .product-categories-nav .current-menu-item a {
+    font-weight: 700; }
+
 .nav {
   border-bottom: 0;
   margin: 0;
@@ -2857,6 +2881,16 @@ you can add resource intensive styles.
 
   .mobile-nav-wrap {
     display: none; }
+
+  .shop-sidebar {
+    text-align: left; }
+    .shop-sidebar .product-categories-nav {
+      margin-left: 20px; }
+      .shop-sidebar .product-categories-nav li {
+        margin-bottom: 5px; }
+      .shop-sidebar .product-categories-nav a {
+        display: inline;
+        border-bottom: 0; }
 
   .nav {
     border: 0;

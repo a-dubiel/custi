@@ -30,6 +30,7 @@ $woocommerce_loop['loop']++;
 
 // Extra post classes
 $classes = array();
+$classes[] = 'col-lg-3 col-sm-3 col-md-3';
 if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 == $woocommerce_loop['columns'] )
 	$classes[] = 'first';
 if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )

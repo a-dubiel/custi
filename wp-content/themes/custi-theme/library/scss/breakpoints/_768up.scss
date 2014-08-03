@@ -226,6 +226,25 @@ NAVIGATION STYLES
     display:none;
 }
 
+.shop-sidebar {
+  text-align: left;
+  
+  .product-categories-nav {
+    margin-left:20px;
+    
+    li {
+      margin-bottom:5px;
+    }
+    
+    a {
+      display: inline;
+      border-bottom:0;
+    }
+  }
+  
+
+}
+
 
 
 

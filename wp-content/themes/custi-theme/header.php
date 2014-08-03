@@ -48,7 +48,7 @@
 				  <div class="secondary-nav">
 				    <div class="container">
 				    <div class="pull-right user-nav">
-  				    <a href="#" class="header-shopping-cart"><i class="fa fa-shopping-cart"></i><span class="shopping-cart-count">0</span></a>
+  				    <a href="<?php echo home_url(); ?>/koszyk" class="header-shopping-cart"><i class="fa fa-shopping-cart"></i><span class="shopping-cart-count">0</span></a>
   				    <a href="#" class="header-search js-header-search"><i class="fa fa-search"></i></a>  				    
   				    <div class="header-search-wrap">
   				      <?php get_search_form(); ?>
