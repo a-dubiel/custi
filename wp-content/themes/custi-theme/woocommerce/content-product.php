@@ -30,14 +30,14 @@ $woocommerce_loop['loop']++;
 
 // Extra post classes
 $classes = array();
-$classes[] = 'col-lg-3 col-sm-3 col-md-3';
+$classes[] = 'col-lg-4 col-sm-6 col-md-4';
 if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 == $woocommerce_loop['columns'] )
 	$classes[] = 'first';
 if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	$classes[] = 'last';
 ?>
 <li <?php post_class( $classes ); ?>>
-
+  <div class="product-wrap">
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
 	<a href="<?php the_permalink(); ?>">
@@ -50,9 +50,13 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			 */
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 		?>
-
+    <div class="product-info">
 		<h3><?php the_title(); ?></h3>
-
+		
+    <p><?php echo substr($product->post->post_excerpt, 0, 70).'...' ?></p>
+    <p><a class="product-info-more" href="<?php the_permalink(); ?>">więcej informacji</a></p>
+    
+    <?php// print_r( get_post_meta($product->post->ID, 'waga_cena_kg') )?>
 		<?php
 			/**
 			 * woocommerce_after_shop_loop_item_title hook
@@ -62,9 +66,19 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			 */
 			do_action( 'woocommerce_after_shop_loop_item_title' );
 		?>
-
+		<small><?php echo get_post_meta($product->post->ID, 'waga_cena_kg', true) ?></small>
+    </div>
 	</a>
-
-	<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
-
+    <div class="product-cta">
+  	<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
+    </div>
+  </div>
 </li>
+
+<?php 
+  
+  if($woocommerce_loop['loop'] % 3 == 0) {
+    echo '<div class="clearfix hidden-sm"></div>';
+  }
+
+?>

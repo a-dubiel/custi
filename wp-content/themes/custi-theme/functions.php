@@ -210,5 +210,7 @@ function my_woocommerce_breadcrumbs() {
 
 add_filter( 'woocommerce_breadcrumb_defaults', 'my_woocommerce_breadcrumbs' );
 
+add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

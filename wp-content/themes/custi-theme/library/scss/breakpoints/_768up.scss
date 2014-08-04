@@ -63,6 +63,7 @@ HEADER STYLES
   color:$gray;
   text-decoration: none;
   line-height:90px;
+  font-size:0.875em;
   
   &:hover {
     color:$black;
@@ -239,10 +240,32 @@ NAVIGATION STYLES
     a {
       display: inline;
       border-bottom:0;
+      font-size:0.875em;
     }
   }
   
 
+}
+
+.products {
+  li {
+    min-height:510px;
+    margin-bottom:0;
+         }
+  
+  .product-wrap {
+    overflow: hidden;
+  }
+  
+  li .product-wrap img {
+    @include transition(all 0.2s ease-in-out);
+
+  }
+  
+  li:hover .product-wrap img {
+    transform: scale(1.05);
+
+  }
 }
 
 

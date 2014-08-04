@@ -41,6 +41,7 @@
 	</head>
 
 	<body <?php body_class(); ?>>
+  <?php global $woocommerce; ?>
 		<header class="header" role="banner">    
 		
 		
@@ -48,7 +49,7 @@
 				  <div class="secondary-nav">
 				    <div class="container">
 				    <div class="pull-right user-nav">
-  				    <a href="<?php echo home_url(); ?>/koszyk" class="header-shopping-cart"><i class="fa fa-shopping-cart"></i><span class="shopping-cart-count">0</span></a>
+  				    <a href="<?php echo $woocommerce->cart->get_cart_url(); ?>" class="header-shopping-cart"><i class="fa fa-shopping-cart"></i><span class="shopping-cart-count"><?php echo $woocommerce->cart->cart_contents_count ?></span></a>
   				    <a href="#" class="header-search js-header-search"><i class="fa fa-search"></i></a>  				    
   				    <div class="header-search-wrap">
   				      <?php get_search_form(); ?>
