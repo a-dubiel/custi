@@ -2199,7 +2199,7 @@ html:not(.ua-mobile-iphone) .mobile-nav-icon {
 
 .shop-sidebar {
   text-align: center; }
-  .shop-sidebar h5 {
+  .shop-sidebar h5, .shop-sidebar .widgettitle {
     font-size: 1.125em;
     text-transform: none;
     letter-spacing: normal;
@@ -2310,6 +2310,60 @@ html:not(.ua-mobile-iphone) .mobile-nav-icon {
       content: 'Dodaj do koszyka'; }
   .products .product-wrap .product-cta {
     padding: 0 10px 10px; }
+
+.shop-container .page-title {
+  font-size: 1.5em;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #333333;
+  line-height: 1em;
+  margin: 20px 0 0; }
+.shop-container .woocommerce-result-count {
+  color: #7c7c7c;
+  margin: 0 0 10px; }
+
+.ajax-layered ul {
+  margin: 0; }
+  .ajax-layered ul li.filter-selected :after {
+    content: "\f00d";
+    font-family: "FontAwesome";
+    margin: 0 5px; }
+  .ajax-layered ul li.filter-selected a {
+    background: #44b3d7;
+    color: white;
+    border-bottom: none; }
+  .ajax-layered ul li a {
+    padding: 10px 0;
+    text-decoration: none;
+    color: #333333;
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #ededed;
+    text-transform: capitalize; }
+
+.woocommerce-pagination .page-numbers li {
+  display: inline; }
+  .woocommerce-pagination .page-numbers li a, .woocommerce-pagination .page-numbers li .current {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    background: #f8f9fa;
+    border-radius: 3px;
+    text-align: center;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 0.875em;
+    font-weight: 600; }
+  .woocommerce-pagination .page-numbers li a {
+    color: #7c7c7c; }
+  .woocommerce-pagination .page-numbers li a:hover, .woocommerce-pagination .page-numbers li .current:hover {
+    background: #7c7c7c;
+    color: white; }
+
+.products-wrapper {
+  position: relative; }
 
 .product-info {
   padding: 0 10px; }
@@ -3013,13 +3067,26 @@ you can add resource intensive styles.
   .shop-sidebar {
     text-align: left; }
     .shop-sidebar .product-categories-nav {
-      margin-left: 20px; }
+      margin-left: 10px; }
       .shop-sidebar .product-categories-nav li {
-        margin-bottom: 5px; }
+        margin-bottom: 0px; }
       .shop-sidebar .product-categories-nav a {
         display: inline;
         border-bottom: 0;
-        font-size: 0.875em; }
+        font-size: 0.875em;
+        padding-left: 0; }
+
+  .ajax-layered ul {
+    margin-left: 10px; }
+    .ajax-layered ul li {
+      margin-bottom: 0; }
+      .ajax-layered ul li.filter-selected a {
+        padding: 3px 5px; }
+      .ajax-layered ul li a {
+        display: inline;
+        border-bottom: 0;
+        font-size: 0.875em;
+        border-radius: 3px; }
 
   .products li {
     min-height: 510px;
@@ -3033,6 +3100,13 @@ you can add resource intensive styles.
     -webkit-transform: scale(1.05);
         -ms-transform: scale(1.05);
             transform: scale(1.05); }
+
+  .shop-container .woocommerce-result-count {
+    margin: 0 0 20px; }
+  .shop-container .woocommerce-ordering {
+    position: absolute;
+    top: 40px;
+    right: 15px; }
 
   .nav {
     border: 0;
@@ -3097,19 +3171,11 @@ you can add resource intensive styles.
   .sidebar {
     margin-top: 2.2em; }
 
-  .widgettitle {
-    border-bottom: 2px solid #444;
-    margin-bottom: 0.75em; }
-
-  .widget {
-    padding: 0 10px;
-    margin: 2.2em 0; }
-    .widget ul li {
-      margin-bottom: 0.75em;
-      /* deep nesting */ }
-      .widget ul li ul {
-        margin-top: 0.75em;
-        padding-left: 1em; }
+  .widget ul li {
+    /* deep nesting */ }
+    .widget ul li ul {
+      margin-top: 0.75em;
+      padding-left: 1em; }
 
   /* links widget */
   /* meta widget */
@@ -3180,7 +3246,7 @@ you can add resource intensive styles.
     width: 140px; }
 
   .products li {
-    min-height: 490px; } }
+    min-height: 570px; } }
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.

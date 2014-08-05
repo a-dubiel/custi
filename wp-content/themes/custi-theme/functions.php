@@ -116,14 +116,15 @@ new image size.
 
 // Sidebars & Widgetizes Areas
 function bones_register_sidebars() {
+	
 	register_sidebar(array(
-		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'bonestheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'id' => 'shop-sidebar-2',
+		'name' => __( 'Shop Sidebar', 'bonestheme' ),
+		'description' => __( 'Shop sidebar.', 'bonestheme' ),
+		'before_widget' => '<div class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
+		'after_title' => '</h4>'
 	));
 
 	/*
@@ -211,6 +212,8 @@ function my_woocommerce_breadcrumbs() {
 add_filter( 'woocommerce_breadcrumb_defaults', 'my_woocommerce_breadcrumbs' );
 
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
+
 
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

@@ -414,7 +414,7 @@ html:not(.ua-mobile-iphone) {
   
   text-align: center;
   
-  h5 {
+  h5, .widgettitle {
     font-size:1.125em;
     text-transform: none;
     letter-spacing: normal;
@@ -586,16 +586,110 @@ html:not(.ua-mobile-iphone) {
       }
       
       
-  }
-  
-  
-  
-  
+  }  
 }
 
 
 
+.shop-container {
+  .page-title {
+    font-size:1.5em;
+    text-transform: none;
+    letter-spacing: normal;
+    color: $black;
+    line-height:1em;
+    margin:20px 0 0;
+  }
+  
+  .woocommerce-result-count {
+    color: $gray;
+    margin: 0 0 10px;
+  }
+  
+  .woocommerce-ordering {
+    
+  }
+}
 
+.ajax-layered {
+  
+  ul {
+     
+     margin:0; 
+      
+    li {  
+      
+      &.filter-selected {
+
+      :after {
+        content:"\f00d";
+        font-family: "FontAwesome";
+        margin: 0 5px;
+        
+      }
+      
+      a {
+        background: $custi-blue;
+        color:$white;
+        border-bottom:none;
+        
+      }
+    }
+   
+    a {
+
+       padding:10px 0;
+       text-decoration: none;
+       color:$black;
+       width:100%;
+       display:block;
+       border-bottom:1px solid $border-color;
+       text-transform: capitalize;
+       
+    }
+  }
+        
+  }
+
+}
+
+.woocommerce-pagination {
+  .page-numbers {
+
+    li {
+      display:inline;
+      
+      a, .current {
+        display:block;
+        width:40px;
+        height:40px;
+        line-height: 40px;
+        float:left;
+        background: $light-gray;
+        border-radius:3px;
+        text-align: center;
+        margin-right:15px;
+        text-decoration: none;
+        font-size:0.875em;
+        font-weight: 600;
+      }
+      
+      a {
+        color:$gray;
+      }
+      
+      a:hover, .current:hover {
+        background: $gray;
+        color:$white;
+      }
+    }
+   
+  }
+}
+
+.products-wrapper {
+  position: relative;
+}
 
 .product-info {
   padding:0 10px;

@@ -52,8 +52,13 @@
   				    <a href="<?php echo $woocommerce->cart->get_cart_url(); ?>" class="header-shopping-cart"><i class="fa fa-shopping-cart"></i><span class="shopping-cart-count"><?php echo $woocommerce->cart->cart_contents_count ?></span></a>
   				    <a href="#" class="header-search js-header-search"><i class="fa fa-search"></i></a>  				    
   				    <div class="header-search-wrap">
-  				      <?php get_search_form(); ?>
-  				    </div> 				    
+  				      <form role="search" method="get" id="searchform" action="http://andrzej-dubiels-macbook-pro.local:5757/">
+			<div>
+				<input type="text" value="" name="s" id="s" placeholder="Szukaj produktów">
+				<input type="submit" id="searchsubmit" value="Szukaj">
+				<input type="hidden" name="post_type" value="product">
+			</div>
+		</form>  				    </div> 				    
 				    </div>
 				    <div class="pull-left social-nav">
   				    <a href="#" class="header-facebook-square"><span class="social-more-info">Facebook</span><i class="fa fa-facebook-square"></i></a>

@@ -30,7 +30,7 @@ $woocommerce_loop['loop']++;
 
 // Extra post classes
 $classes = array();
-$classes[] = 'col-lg-4 col-sm-6 col-md-4';
+$classes[] = 'col-lg-4 col-sm-6 col-md-6';
 if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 == $woocommerce_loop['columns'] )
 	$classes[] = 'first';
 if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
@@ -78,7 +78,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 <?php 
   
   if($woocommerce_loop['loop'] % 3 == 0) {
-    echo '<div class="clearfix hidden-sm"></div>';
+    echo '<div class="clearfix hidden-sm hidden-md"></div>';
   }
 
 ?>

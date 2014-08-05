@@ -25,7 +25,7 @@ get_header( 'shop' ); ?>
 	?>
     <div class="container">
       <div class="row">
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 pull-right">
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 pull-right products-wrapper">
 
     
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
@@ -76,7 +76,7 @@ get_header( 'shop' ); ?>
 		<?php endif; ?>
         </div>
         
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-left">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-left" role="complementary">
           <aside class="shop-sidebar">
             <h5>Kategorie</h5>
             <nav role="navigation">
@@ -94,6 +94,17 @@ get_header( 'shop' ); ?>
       					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
   						)); ?>
             </nav>
+            
+           
+
+						<?php if ( is_active_sidebar( 'shop-sidebar-2' ) ) : ?>
+            	
+            		<?php dynamic_sidebar( 'shop-sidebar-2' ); ?>
+      
+            <?php endif; ?>
+
+           
+            
           </aside>          
         </div>
 

@@ -231,20 +231,48 @@ NAVIGATION STYLES
   text-align: left;
   
   .product-categories-nav {
-    margin-left:20px;
+    margin-left:10px;
     
     li {
-      margin-bottom:5px;
+      margin-bottom:0px;
     }
     
     a {
       display: inline;
       border-bottom:0;
       font-size:0.875em;
+      padding-left:0;
+     
     }
+
   }
   
 
+}
+
+.ajax-layered {
+  ul {
+    margin-left:10px;
+   li {  
+    margin-bottom:0;
+    
+    &.filter-selected {
+      a {
+        padding:3px 5px;
+      }
+    }
+    
+    
+    
+    a {
+      display: inline;
+      border-bottom:0;
+      font-size:0.875em;
+      border-radius:3px;  
+    }
+  }
+    
+  }
 }
 
 .products {
@@ -265,6 +293,19 @@ NAVIGATION STYLES
   li:hover .product-wrap img {
     transform: scale(1.05);
 
+  }
+}
+
+.shop-container {
+
+  .woocommerce-result-count {
+    margin: 0 0 20px;
+  }
+  
+  .woocommerce-ordering {
+    position: absolute;
+    top:40px;
+    right:15px;
   }
 }
 
@@ -376,17 +417,16 @@ SIDEBARS & ASIDES
 }
 
 	.widgettitle {
-		border-bottom: 2px solid #444;
-		margin-bottom: 0.75em;
+
 	}
 
 	.widget {
-		padding: 0 10px;
-		margin: 2.2em 0;
+
+		
 
 		ul {
 			li {
-				margin-bottom: 0.75em;
+			
 
 				&:first-child {}
 				&:last-child {}

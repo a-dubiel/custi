@@ -344,13 +344,26 @@ NAVIGATION STYLES
 .shop-sidebar {
   text-align: left; }
   .shop-sidebar .product-categories-nav {
-    margin-left: 20px; }
+    margin-left: 10px; }
     .shop-sidebar .product-categories-nav li {
-      margin-bottom: 5px; }
+      margin-bottom: 0px; }
     .shop-sidebar .product-categories-nav a {
       display: inline;
       border-bottom: 0;
-      font-size: 0.875em; }
+      font-size: 0.875em;
+      padding-left: 0; }
+
+.ajax-layered ul {
+  margin-left: 10px; }
+  .ajax-layered ul li {
+    margin-bottom: 0; }
+    .ajax-layered ul li.filter-selected a {
+      padding: 3px 5px; }
+    .ajax-layered ul li a {
+      display: inline;
+      border-bottom: 0;
+      font-size: 0.875em;
+      border-radius: 3px; }
 
 .products li {
   min-height: 510px;
@@ -362,6 +375,13 @@ NAVIGATION STYLES
   transition: all 0.2s ease-in-out; }
 .products li:hover .product-wrap img {
   transform: scale(1.05); }
+
+.shop-container .woocommerce-result-count {
+  margin: 0 0 20px; }
+.shop-container .woocommerce-ordering {
+  position: absolute;
+  top: 40px;
+  right: 15px; }
 
 .nav {
   border: 0;
@@ -426,19 +446,11 @@ SIDEBARS & ASIDES
 .sidebar {
   margin-top: 2.2em; }
 
-.widgettitle {
-  border-bottom: 2px solid #444;
-  margin-bottom: 0.75em; }
-
-.widget {
-  padding: 0 10px;
-  margin: 2.2em 0; }
-  .widget ul li {
-    margin-bottom: 0.75em;
-    /* deep nesting */ }
-    .widget ul li ul {
-      margin-top: 0.75em;
-      padding-left: 1em; }
+.widget ul li {
+  /* deep nesting */ }
+  .widget ul li ul {
+    margin-top: 0.75em;
+    padding-left: 1em; }
 
 /* links widget */
 /* meta widget */
@@ -503,7 +515,7 @@ be seen on the Desktop.
   width: 140px; }
 
 .products li {
-  min-height: 490px; }
+  min-height: 570px; }
 
 /*
 you can call the larger styles if you want, but there's really no need
