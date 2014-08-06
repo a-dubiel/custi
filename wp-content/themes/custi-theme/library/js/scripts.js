@@ -1,3 +1,5 @@
+
+
 /*!
  * hoverIntent v1.8.0 // 2014.06.29 // jQuery v1.9.1+
  * http://cherne.net/brian/resources/jquery.hoverIntent.html
@@ -114,6 +116,24 @@ function loadGravatars() {
 } // end function
 
 
+function stickySidebar() {
+
+  if(jQuery('.shop-sidebar-wrapper').length) {
+    var top = jQuery('.shop-sidebar-wrapper').offset().top;
+  jQuery(window).scroll(function (event) {
+    var y = jQuery(this).scrollTop();
+    if (y >= top)
+      jQuery('.shop-sidebar-wrapper').addClass('fixed');
+    else
+      jQuery('.shop-sidebar-wrapper').removeClass('fixed');
+
+  });
+  }
+  
+
+
+}
+
 function responsiveNav() {
       
       viewport = updateViewportDimensions();
@@ -126,6 +146,8 @@ function responsiveNav() {
        if( viewport.width >= 768 ) {
          console.log( 'desktop' );
          isDesktop = true;
+         
+         stickySidebar();
         
          
          
@@ -152,7 +174,7 @@ jQuery(document).ready(function($) {
   
   //alert($('html')[0].classList);
   
-  //responsiveNav();
+  responsiveNav();
   
   $('.js-header-search').click(function(e){
     $('#s').toggleClass('expanded');
@@ -193,8 +215,13 @@ jQuery(document).ready(function($) {
   });
   
   
+  $('.add_to_cart_button').on('click', function(){
+    $('.shopping-cart-count').text(parseInt($('.shopping-cart-count').text())+1);
+  });
+  
+  
 
- 
+  
 
 
   

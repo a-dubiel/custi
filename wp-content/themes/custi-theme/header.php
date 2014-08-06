@@ -121,65 +121,11 @@
         
             <div class="row">
               
-              <div class="col-lg-2 col-md-2 col-sm-3">
-                <a href="#" class="store-dropdown-item">
-                  <div class="store-dropdown-thumb">
-                    <img src="http://flickholdr.iwerk.org/400/400/" />
-                  </div>
-                  <h5>Nazwa kategorii</h5>
-                  <p>Opis kategorii czy czegoś tam</p>
-                </a>
-              </div>
-              
-               <div class="col-lg-2 col-md-2 col-sm-3">
-                <a href="#" class="store-dropdown-item">
-                  <div class="store-dropdown-thumb">
-                    <img src="http://flickholdr.iwerk.org/400/400/" />
-                  </div>
-                  <h5>Nazwa kategorii</h5>
-                  <p>Opis kategorii czy czegoś tam</p>
-                </a>
-              </div>
-              
-               <div class="col-lg-2 col-md-2 col-sm-3">
-                <a href="#" class="store-dropdown-item">
-                  <div class="store-dropdown-thumb">
-                    <img src="http://flickholdr.iwerk.org/400/400/" />
-                  </div>
-                  <h5>Nazwa kategorii</h5>
-                  <p>Opis kategorii czy czegoś tam</p>
-                </a>
-              </div>
-              
-               <div class="col-lg-2 col-md-2 col-sm-3">
-                <a href="#" class="store-dropdown-item">
-                  <div class="store-dropdown-thumb">
-                    <img src="http://flickholdr.iwerk.org/400/400/" />
-                  </div>
-                  <h5>Nazwa kategorii</h5>
-                  <p>Opis kategorii czy czegoś tam</p>
-                </a>
-              </div>
-              
-               <div class="col-lg-2 col-md-2 col-sm-3">
-                <a href="#" class="store-dropdown-item">
-                  <div class="store-dropdown-thumb">
-                    <img src="http://flickholdr.iwerk.org/400/400/" />
-                  </div>
-                  <h5>Nazwa kategorii</h5>
-                  <p>Opis kategorii czy czegoś tam</p>
-                </a>
-              </div>
-              
-               <div class="col-lg-2 col-md-2 col-sm-3">
-                <a href="#" class="store-dropdown-item">
-                  <div class="store-dropdown-thumb">
-                    <img src="http://flickholdr.iwerk.org/400/400/" />
-                  </div>
-                  <h5>Nazwa kategorii</h5>
-                  <p>Opis kategorii czy czegoś tam</p>
-                </a>
-              </div>
+             	<?php if ( is_active_sidebar( 'shop-subnav' ) ) : ?>
+            	
+            		<?php dynamic_sidebar( 'shop-subnav' ); ?>
+      
+            <?php endif; ?>
               
             </div>
             
@@ -190,7 +136,7 @@
             <div class="container">
               <div class="row">
                  <div class="col-lg-3 col-md-3 col-sm-3 more-info-menu">
-                    <h3 class="more-info-heading">Poznaj Custi</h3>
+                    <h5 class="more-info-heading">Poznaj Custi</h5>
                     <ul>
                       <li><a href="#">Blog</a></li>
                       <li><a href="#">O Nas</a></li>
@@ -202,17 +148,17 @@
                  </div>
                  
                  <div class="col-lg-3 col-md-3 col-sm-3 more-info-menu">
-                    <h3 class="more-info-heading">Zrób Sam</h3>
+                    <h5 class="more-info-heading">Zrób Sam</h5>
                     
                  </div>
                  
                  <div class="col-lg-3 col-md-3 col-sm-3 more-info-menu">
-                    <h3 class="more-info-heading">Facebook</h3>
+                    <h5 class="more-info-heading">Facebook</h5>
                     
                  </div>
                  
                  <div class="col-lg-3 col-md-3 col-sm-3 more-info-menu">
-                    <h3 class="more-info-heading">Informacje</h3>
+                    <h5 class="more-info-heading">Informacje</h5>
                     
                  </div>
               </div>

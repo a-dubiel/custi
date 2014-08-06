@@ -76,7 +76,7 @@ get_header( 'shop' ); ?>
 		<?php endif; ?>
         </div>
         
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-left" role="complementary">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-left shop-sidebar-wrapper" role="complementary">
           <aside class="shop-sidebar">
             <h5>Kategorie</h5>
             <nav role="navigation">
@@ -97,9 +97,9 @@ get_header( 'shop' ); ?>
             
            
 
-						<?php if ( is_active_sidebar( 'shop-sidebar-2' ) ) : ?>
+						<?php if ( is_active_sidebar( 'shop-sidebar' ) ) : ?>
             	
-            		<?php dynamic_sidebar( 'shop-sidebar-2' ); ?>
+            		<?php dynamic_sidebar( 'shop-sidebar' ); ?>
       
             <?php endif; ?>
 

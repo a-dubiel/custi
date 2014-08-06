@@ -123,8 +123,8 @@ function loadPage(url, push){
 				var max = 0;
 				max = jQuery(ajax_layered_nav.product_container).outerHeight();
 				jQuery(value + '').fadeOut("fast", function() {
-					jQuery(value).html('<center style="min-height:'+max+'px;"><p>'+ajax_layered_nav.loading_text+'...<br><img src="'+ajax_layered_nav.loading_img+'" alt="loading"></p></center>');
-					jQuery(value).fadeIn("slow", function() {});
+					jQuery(value).html('<div class="products-loading"><i class="fa fa-spinner fa-spin fa-5x"></i></div>');
+					jQuery(value).fadeIn("slow");
 				});
 			}
 			http.open('GET', url, true);		//Get the new content

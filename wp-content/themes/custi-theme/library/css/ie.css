@@ -284,6 +284,16 @@ NAVIGATION STYLES
   border-bottom: 1px solid #ededed;
   transform: translateY(0); }
 
+.store-dropdown {
+  padding-top: 20px; }
+  .store-dropdown ul {
+    margin-top: 0; }
+  .store-dropdown li a {
+    color: #79ac3c;
+    text-decoration: none; }
+  .store-dropdown li a:hover {
+    text-decoration: underline; }
+
 .store-dropdown-item {
   text-decoration: none;
   text-align: center; }
@@ -323,20 +333,32 @@ NAVIGATION STYLES
   font-size: 0.750em;
   margin: 0; }
 
-.more-info-heading {
-  font-size: 1em;
-  margin: 0;
-  font-weight: 400; }
+.more-info-heading,
+.store-dropdown .widgettitle {
+  font-size: 1.1em;
+  margin: 0 0 5px;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none; }
 
-.more-info-menu {
+.more-info-menu,
+.store-dropodown {
   padding-top: 20px; }
-  .more-info-menu ul {
+  .more-info-menu ul,
+  .store-dropodown ul {
     margin-top: 0; }
-  .more-info-menu li a {
+  .more-info-menu li a,
+  .store-dropodown li a {
     color: #79ac3c;
     text-decoration: none; }
-  .more-info-menu li a:hover {
+  .more-info-menu li a:hover,
+  .store-dropodown li a:hover {
     text-decoration: underline; }
+
+.shop-sidebar-wrapper.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 999; }
 
 .mobile-nav-wrap {
   display: none; }
