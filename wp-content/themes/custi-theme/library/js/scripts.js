@@ -147,7 +147,7 @@ function responsiveNav() {
          console.log( 'desktop' );
          isDesktop = true;
          
-         stickySidebar();
+        // stickySidebar();
         
          
          

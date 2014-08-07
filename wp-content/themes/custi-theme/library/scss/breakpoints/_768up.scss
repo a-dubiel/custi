@@ -159,11 +159,85 @@ NAVIGATION STYLES
   li a {
     color:$custi-green;
     text-decoration: none;
+    font-size:0.875em;
   }
   
   li a:hover {
     text-decoration: underline;
   } 
+  
+  .product_list_widget {
+    
+    li {
+      display: block;
+      width:100%;
+      margin-bottom:10px;
+      clear:both;
+      
+      a {
+        margin-bottom:-5px;
+        clear:right;
+        display:block;
+        line-height:1.1em;
+
+        
+      }
+    }
+    
+    img {
+      display:none;
+    }
+
+    .amount {
+      text-transform: uppercase;
+      color:$gray;
+      font-size:0.8em; 
+    }
+  }
+}
+
+.promo-box {
+  display: block;
+  width:100%;
+  height:180px;
+  position: relative;
+  
+  color:$white;
+  font-size:0.875em;
+  
+  &:hover {
+    color:$white;
+  }
+  
+  &.create-your-own {
+    background: url(http://img2.timeinc.net/health/img/mag/2013/04/yogurt-breakfast-bowl-400x400.jpg);
+  }
+  
+  &.create-your-own span {
+    background: $custi-green;
+    background: rgba($custi-green, 0.9);
+  }
+  
+  &.facebook-box {
+    background: url(http://www.insidefacebook.com/wp-content/uploads/2012/07/facebook_like_button_big.jpeg);
+  }
+  
+  &.facebook-box span {
+    background: $facebook;
+    background: rgba($facebook, 0.9);
+  }
+
+
+  span {
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:35px;
+    text-align: center;
+    line-height: 35px;
+  }
+
 }
 
 .store-dropdown-item {
@@ -215,10 +289,12 @@ NAVIGATION STYLES
 }
 
 .more-info-heading,
-.store-dropdown .widgettitle {
-  font-size:1.1em;
+.store-dropdown .widgettitle,
+.more-info-dropdown .widgettitle
+ {
+  font-size:0.95em;
   margin:0 0 5px;
-  font-weight:400;
+  font-weight:600;
   letter-spacing: normal;
   text-transform: none;
 }
@@ -226,16 +302,22 @@ NAVIGATION STYLES
 
 
 .more-info-menu,
-.store-dropodown {
+.store-dropodown,
+.more-info-dropdown {
   padding-top:20px;
   
   ul {
     margin-top:0;
   }
   
+  li {
+
+  }
+  
   li a {
     color:$custi-green;
     text-decoration: none;
+    font-size:0.875em;
   }
   
   li a:hover {
@@ -273,9 +355,28 @@ NAVIGATION STYLES
     }
 
   }
-  
 
 }
+
+.breadcrumbs {
+  border-bottom: 1px solid $border-color;
+  padding:12px 0;
+  font-size:0.875em;
+  display: block;
+  
+  a {
+    font-weight: 600;
+    text-decoration: none;
+    color: $black;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: $black;
+  }
+}
+
+
 
 .ajax-layered {
   ul {

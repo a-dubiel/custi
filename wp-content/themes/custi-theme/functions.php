@@ -119,7 +119,7 @@ function bones_register_sidebars() {
 	
 	register_sidebar(array(
 		'id' => 'shop-sidebar',
-		'name' => __( 'Shop Sidebar', 'bonestheme' ),
+		'name' => __( 'Shop sidebar', 'bonestheme' ),
 		'description' => __( 'Shop sidebar', 'bonestheme' ),
 		'before_widget' => '<div class="widget %2$s">',
 		'after_widget' => '</div>',
@@ -129,13 +129,24 @@ function bones_register_sidebars() {
 	
 	register_sidebar(array(
 		'id' => 'shop-subnav',
-		'name' => __( 'Shop Subnav', 'bonestheme' ),
+		'name' => __( 'Shop subnav', 'bonestheme' ),
 		'description' => __( 'Shop subnav', 'bonestheme' ),
 		'before_widget' => '<div class="col-lg-3 col-md-3 col-sm-3 widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h5 class="widgettitle">',
 		'after_title' => '</h5>'
 	));
+	
+	register_sidebar(array(
+		'id' => 'more-info-subnav',
+		'name' => __( 'More information subnav', 'bonestheme' ),
+		'description' => __( 'More information subnav', 'bonestheme' ),
+		'before_widget' => '<div class="col-lg-3 col-md-3 col-sm-3 widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h5 class="widgettitle">',
+		'after_title' => '</h5>'
+	));
+
 
 	/*
 	to add more sidebars or widgetized areas, just copy
@@ -224,6 +235,7 @@ add_filter( 'woocommerce_breadcrumb_defaults', 'my_woocommerce_breadcrumbs' );
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
 add_filter('show_admin_bar', '__return_false');
+
 
 
 

@@ -2186,16 +2186,7 @@ html:not(.ua-mobile-iphone) .mobile-nav-icon {
   width: 150px; }
 
 .breadcrumbs {
-  border-bottom: 1px solid #ededed;
-  padding: 12px 0;
-  font-size: 0.875em; }
-  .breadcrumbs a {
-    font-weight: 600;
-    text-decoration: none;
-    color: #333333; }
-  .breadcrumbs a:hover {
-    text-decoration: underline;
-    color: #333333; }
+  display: none; }
 
 .products-loading {
   width: 90px;
@@ -3020,9 +3011,54 @@ you can add resource intensive styles.
       margin-top: 0; }
     .store-dropdown li a {
       color: #79ac3c;
-      text-decoration: none; }
+      text-decoration: none;
+      font-size: 0.875em; }
     .store-dropdown li a:hover {
       text-decoration: underline; }
+    .store-dropdown .product_list_widget li {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      clear: both; }
+      .store-dropdown .product_list_widget li a {
+        margin-bottom: -5px;
+        clear: right;
+        display: block;
+        line-height: 1.1em; }
+    .store-dropdown .product_list_widget img {
+      display: none; }
+    .store-dropdown .product_list_widget .amount {
+      text-transform: uppercase;
+      color: #7c7c7c;
+      font-size: 0.8em; }
+
+  .promo-box {
+    display: block;
+    width: 100%;
+    height: 180px;
+    position: relative;
+    color: white;
+    font-size: 0.875em; }
+    .promo-box:hover {
+      color: white; }
+    .promo-box.create-your-own {
+      background: url(http://img2.timeinc.net/health/img/mag/2013/04/yogurt-breakfast-bowl-400x400.jpg); }
+    .promo-box.create-your-own span {
+      background: #79ac3c;
+      background: rgba(121, 172, 60, 0.9); }
+    .promo-box.facebook-box {
+      background: url(http://www.insidefacebook.com/wp-content/uploads/2012/07/facebook_like_button_big.jpeg); }
+    .promo-box.facebook-box span {
+      background: #3b5998;
+      background: rgba(59, 89, 152, 0.9); }
+    .promo-box span {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 35px;
+      text-align: center;
+      line-height: 35px; }
 
   .store-dropdown-item {
     text-decoration: none;
@@ -3064,25 +3100,31 @@ you can add resource intensive styles.
     margin: 0; }
 
   .more-info-heading,
-  .store-dropdown .widgettitle {
-    font-size: 1.1em;
+  .store-dropdown .widgettitle,
+  .more-info-dropdown .widgettitle {
+    font-size: 0.95em;
     margin: 0 0 5px;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: normal;
     text-transform: none; }
 
   .more-info-menu,
-  .store-dropodown {
+  .store-dropodown,
+  .more-info-dropdown {
     padding-top: 20px; }
     .more-info-menu ul,
-    .store-dropodown ul {
+    .store-dropodown ul,
+    .more-info-dropdown ul {
       margin-top: 0; }
     .more-info-menu li a,
-    .store-dropodown li a {
+    .store-dropodown li a,
+    .more-info-dropdown li a {
       color: #79ac3c;
-      text-decoration: none; }
+      text-decoration: none;
+      font-size: 0.875em; }
     .more-info-menu li a:hover,
-    .store-dropodown li a:hover {
+    .store-dropodown li a:hover,
+    .more-info-dropdown li a:hover {
       text-decoration: underline; }
 
   .shop-sidebar-wrapper.fixed {
@@ -3104,6 +3146,19 @@ you can add resource intensive styles.
         border-bottom: 0;
         font-size: 0.875em;
         padding-left: 0; }
+
+  .breadcrumbs {
+    border-bottom: 1px solid #ededed;
+    padding: 12px 0;
+    font-size: 0.875em;
+    display: block; }
+    .breadcrumbs a {
+      font-weight: 600;
+      text-decoration: none;
+      color: #333333; }
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+      color: #333333; }
 
   .ajax-layered ul {
     margin-left: 10px; }
@@ -3275,7 +3330,20 @@ you can add resource intensive styles.
     width: 140px; }
 
   .products li {
-    min-height: 570px; } }
+    min-height: 570px; }
+
+  .more-info-heading,
+  .store-dropdown .widgettitle,
+  .more-info-dropdown .widgettitle {
+    font-size: 1.09em; }
+
+  .store-dropdown .product_list_widget a img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    display: block;
+    margin-right: 10px;
+    display: block; } }
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.

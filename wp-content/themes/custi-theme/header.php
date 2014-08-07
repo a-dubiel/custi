@@ -121,9 +121,9 @@
         
             <div class="row">
               
-             	<?php if ( is_active_sidebar( 'shop-subnav' ) ) : ?>
+            <?php if ( is_active_sidebar( 'shop-subnav' ) ) : ?>
             	
-            		<?php dynamic_sidebar( 'shop-subnav' ); ?>
+            <?php dynamic_sidebar( 'shop-subnav' ); ?>
       
             <?php endif; ?>
               
@@ -135,32 +135,13 @@
           <div class="more-info-dropdown hidden-xs">        
             <div class="container">
               <div class="row">
-                 <div class="col-lg-3 col-md-3 col-sm-3 more-info-menu">
-                    <h5 class="more-info-heading">Poznaj Custi</h5>
-                    <ul>
-                      <li><a href="#">Blog</a></li>
-                      <li><a href="#">O Nas</a></li>
-                      <li><a href="#">Opinie</a></li>
-                      <li><a href="#">FAQ</a></li>
-                      <li><a href="#">Kontakt</a></li>
-                      <li><a href="#">Praca</a></li>
-                    </ul>
-                 </div>
-                 
-                 <div class="col-lg-3 col-md-3 col-sm-3 more-info-menu">
-                    <h5 class="more-info-heading">Zrób Sam</h5>
-                    
-                 </div>
-                 
-                 <div class="col-lg-3 col-md-3 col-sm-3 more-info-menu">
-                    <h5 class="more-info-heading">Facebook</h5>
-                    
-                 </div>
-                 
-                 <div class="col-lg-3 col-md-3 col-sm-3 more-info-menu">
-                    <h5 class="more-info-heading">Informacje</h5>
-                    
-                 </div>
+              
+              	<?php if ( is_active_sidebar( 'more-info-subnav' ) ) : ?>
+            	
+            		  <?php dynamic_sidebar( 'more-info-subnav' ); ?>
+      
+                <?php endif; ?>
+              
               </div>
             </div>
      
