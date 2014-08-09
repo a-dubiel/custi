@@ -520,7 +520,7 @@ html:not(.ua-mobile-iphone) {
         }  
         
         &.loading .add-to-cart-icon .fa-plus-circle:before {
-          content: "\f110";
+          content: "\f1ce";
           -webkit-animation: spin 2s infinite linear;
           -moz-animation: spin 2s infinite linear;
           -o-animation: spin 2s infinite linear;
@@ -1429,6 +1429,7 @@ FOOTER STYLES
 .footer-nav li a {
   color: $custi-light-green;
   text-align: center;
+  font-size:0.875em;
   
   &:hover {
     color:$custi-light-green;

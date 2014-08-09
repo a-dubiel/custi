@@ -529,6 +529,16 @@ NAVIGATION STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
+.textwidget .fa-ul {
+  margin-left: 1.55em;
+  font-size: 0.875em; }
+  .textwidget .fa-ul a {
+    font-size: 1em; }
+  .textwidget .fa-ul li {
+    margin-bottom: 5px; }
+.textwidget .fa-li {
+  top: 0.3em; }
+
 .sidebar {
   margin-top: 2.2em; }
 

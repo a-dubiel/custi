@@ -157,7 +157,7 @@ NAVIGATION STYLES
   }
   
   li a {
-    color:$custi-green;
+    color: $custi-green;
     text-decoration: none;
     font-size:0.875em;
   }
@@ -540,6 +540,26 @@ NAVIGATION STYLES
 SIDEBARS & ASIDES
 *********************/
 
+.textwidget {
+  .fa-ul {
+    margin-left:1.55em;
+    font-size:0.875em;
+
+    
+    a {
+      font-size:1em;
+    }
+    
+    li {
+      margin-bottom:5px;
+    }
+  }
+  
+  .fa-li {
+    top:0.3em;
+  }
+}
+
 .sidebar {
 	margin-top: 2.2em;
 }
@@ -549,7 +569,8 @@ SIDEBARS & ASIDES
 	}
 
 	.widget {
-
+    
+   
 		
 
 		ul {

@@ -123,7 +123,7 @@ function loadPage(url, push){
 				var max = 0;
 				max = jQuery(ajax_layered_nav.product_container).outerHeight();
 				jQuery(value + '').fadeOut("fast", function() {
-					jQuery(value).html('<div class="products-loading"><i class="fa fa-spinner fa-spin fa-5x"></i></div>');
+					jQuery(value).html('<div class="products-loading"><i class="fa fa-circle-o-notch fa-spin fa-5x"></i></div>');
 					jQuery(value).fadeIn("slow");
 				});
 			}

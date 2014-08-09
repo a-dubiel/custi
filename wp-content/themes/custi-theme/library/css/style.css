@@ -2275,7 +2275,7 @@ html:not(.ua-mobile-iphone) .mobile-nav-icon {
     .products .product-wrap .add_to_cart_button:hover {
       background: #2b572a; }
     .products .product-wrap .add_to_cart_button.loading .add-to-cart-icon .fa-plus-circle:before {
-      content: "\f110";
+      content: "\f1ce";
       -webkit-animation: spin 2s infinite linear;
       animation: spin 2s infinite linear; }
     .products .product-wrap .add_to_cart_button.loading .add-to-cart-text:before {
@@ -2757,7 +2757,8 @@ FOOTER STYLES
 
 .footer-nav li a {
   color: #c1ef8a;
-  text-align: center; }
+  text-align: center;
+  font-size: 0.875em; }
   .footer-nav li a:hover {
     color: #c1ef8a; }
 
@@ -3252,6 +3253,16 @@ you can add resource intensive styles.
   /*********************
   SIDEBARS & ASIDES
   *********************/
+  .textwidget .fa-ul {
+    margin-left: 1.55em;
+    font-size: 0.875em; }
+    .textwidget .fa-ul a {
+      font-size: 1em; }
+    .textwidget .fa-ul li {
+      margin-bottom: 5px; }
+  .textwidget .fa-li {
+    top: 0.3em; }
+
   .sidebar {
     margin-top: 2.2em; }
 
