@@ -2320,6 +2320,9 @@ html:not(.ua-mobile-iphone) .mobile-nav-icon {
   color: #7c7c7c;
   margin: 0 0 10px; }
 
+.gray {
+  color: #7c7c7c; }
+
 .ajax-layered ul {
   margin: 0; }
   .ajax-layered ul li.filter-selected :after {
@@ -3253,13 +3256,20 @@ you can add resource intensive styles.
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  .textwidget .fa-ul {
-    margin-left: 1.55em;
-    font-size: 0.875em; }
-    .textwidget .fa-ul a {
-      font-size: 1em; }
-    .textwidget .fa-ul li {
+  .textwidget .contact-list {
+    margin-left: 1.55em; }
+    .textwidget .contact-list li {
+      font-size: 0.875em;
       margin-bottom: 5px; }
+    .textwidget .contact-list a {
+      font-size: 1em;
+      line-height: 1em; }
+    .textwidget .contact-list small {
+      display: block;
+      width: 100%;
+      clear: both;
+      margin-top: -5px;
+      text-transform: uppercase; }
   .textwidget .fa-li {
     top: 0.3em; }
 

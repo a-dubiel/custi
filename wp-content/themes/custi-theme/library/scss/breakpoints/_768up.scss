@@ -541,18 +541,26 @@ SIDEBARS & ASIDES
 *********************/
 
 .textwidget {
-  .fa-ul {
+  .contact-list {
     margin-left:1.55em;
-    font-size:0.875em;
-
+    li {
+      font-size:0.875em;
+      margin-bottom:5px;
+    }
     
     a {
       font-size:1em;
+       line-height: 1em;
     }
     
-    li {
-      margin-bottom:5px;
+    small {
+      display:block;
+      width:100%;
+      clear:both;
+      margin-top:-5px;
+      text-transform: uppercase;
     }
+    
   }
   
   .fa-li {
