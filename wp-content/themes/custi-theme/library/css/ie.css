@@ -415,7 +415,12 @@ NAVIGATION STYLES
   display: none; }
 
 .shop-sidebar {
-  text-align: left; }
+  text-align: left;
+  position: relative;
+  bottom: auto;
+  left: auto;
+  background: none;
+  border-top: none; }
   .shop-sidebar .product-categories-nav {
     margin-left: 10px; }
     .shop-sidebar .product-categories-nav li {
@@ -466,7 +471,7 @@ NAVIGATION STYLES
   margin: 0 0 20px; }
 .shop-container .woocommerce-ordering {
   position: absolute;
-  top: 40px;
+  top: 0px;
   right: 15px; }
 
 .nav {

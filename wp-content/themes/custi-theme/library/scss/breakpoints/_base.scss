@@ -405,7 +405,28 @@ html:not(.ua-mobile-iphone) {
   text-align: center;
 }
 
+
+.nav-expanded {
+  .fa-plus:before {
+    content: "\f068";
+  }
+}
+
 .shop-sidebar {
+
+  position: fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background: $white;
+  border-top:1px solid $border-color;
+  z-index:99;
+
+  nav.hide-list {
+    display: none;
+  }
+  
+  
   
   text-align: center;
   
@@ -415,7 +436,12 @@ html:not(.ua-mobile-iphone) {
     letter-spacing: normal;
     color: $gray;
     line-height:1em;
-    margin:20px 0;
+    margin:15px 0;
+    
+    .fa {
+      float:right;
+      margin-right:20px;
+    }
   }
   
   .product-categories-nav {
@@ -1421,6 +1447,10 @@ FOOTER STYLES
 
 .footer-wrap {
   background: $custi-dark-green;
+  
+  &.with-padding {
+    padding-bottom:90px;
+  }
 }
 
 .footer-logo {

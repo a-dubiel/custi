@@ -78,7 +78,8 @@ get_header( 'shop' ); ?>
         
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-left shop-sidebar-wrapper" role="complementary">
           <aside class="shop-sidebar">
-            <h5>Kategorie</h5>
+            <div class="widget">
+            <h4 class="widgettitle">Kategorie <i class="fa fa-plus visible-xs"></i></h4>
             <nav role="navigation">
   						<?php wp_nav_menu(array(
       					'container' => '',                              // remove nav container
@@ -94,7 +95,7 @@ get_header( 'shop' ); ?>
       					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
   						)); ?>
             </nav>
-            
+            </div>
            
 
 						<?php if ( is_active_sidebar( 'shop-sidebar' ) ) : ?>

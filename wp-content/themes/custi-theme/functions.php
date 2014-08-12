@@ -124,7 +124,7 @@ function bones_register_sidebars() {
 		'before_widget' => '<div class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>'
+		'after_title' => '<i class="fa fa-plus visible-xs"></i></h4>'
 	));
 	
 	register_sidebar(array(

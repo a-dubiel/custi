@@ -339,6 +339,16 @@ NAVIGATION STYLES
 .shop-sidebar {
   text-align: left;
   
+  position: relative;
+  bottom:auto;
+  left:auto;
+  background: none;
+  border-top:none;
+
+
+  
+  
+  
   .product-categories-nav {
     margin-left:10px;
     
@@ -432,7 +442,7 @@ NAVIGATION STYLES
   
   .woocommerce-ordering {
     position: absolute;
-    top:40px;
+    top:0px;
     right:15px;
   }
 }
@@ -560,6 +570,7 @@ SIDEBARS & ASIDES
       margin-top:-5px;
       text-transform: uppercase;
     }
+  
     
   }
   
