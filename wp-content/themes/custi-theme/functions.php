@@ -146,6 +146,16 @@ function bones_register_sidebars() {
 		'before_title' => '<h5 class="widgettitle">',
 		'after_title' => '</h5>'
 	));
+	
+	register_sidebar(array(
+		'id' => 'mix-sidebar',
+		'name' => __( 'Mix sidebar', 'bonestheme' ),
+		'description' => __( 'More information subnav', 'bonestheme' ),
+		'before_widget' => '<div class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '<i class="fa fa-plus visible-xs"></i></h4>'
+	));
 
 
 	/*

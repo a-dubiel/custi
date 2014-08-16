@@ -58,6 +58,8 @@ var waitForFinalEvent = (function () {
 var timeToWaitForLast = 100;
 
 
+
+
 /*
  * Here's an example so you can see how we're using the above function
  *
@@ -140,44 +142,45 @@ function stickySidebar() {
 }
 
 function hideNavs() {
-  if(jQuery('.shop-sidebar-wrapper').length) {
-    jQuery('.shop-sidebar').find('nav').addClass('hide-list');
+    jQuery('.shop-sidebar').find('nav, .collapse').addClass('hide-list');
     jQuery('.footer-wrap').addClass('with-padding');
-  }
 }
 
 function showNavs() {
-  if(jQuery('.shop-sidebar-wrapper').length) {
-   jQuery('.shop-sidebar').find('nav').removeClass('hide-list');  
+   jQuery('.shop-sidebar').find('nav, .collapse').removeClass('hide-list');  
    jQuery('.footer-wrap').removeClass('with-padding');
-  }
 }
 
-function responsiveNav() {
+function responsiveNav(){
       
       viewport = updateViewportDimensions();
-      var isDesktop = false;
+    
  
      // if we're on the home page, we wait the set amount (in function above) then fire the function
       waitForFinalEvent( function() {
  
-       // if we're above or equal to 768 fire this off
+       // desktop
        if( viewport.width >= 768 ) {
          console.log( 'desktop' );
-         isDesktop = true;
+
          
-         showNavs();
          
-         stickySidebar();
-        
-         
+          if(jQuery('.shop-sidebar-wrapper').length) {            
+            showNavs();
+            stickySidebar();
+          }
+
          
         }
+        //mobile
         else {
-          hideNavs();
+           console.log( 'mobile' );
+          if(jQuery('.shop-sidebar-wrapper').length) {  
+            hideNavs();
+          }
         }
 
-     }, timeToWaitForLast, "your-function-identifier-string");
+     }, timeToWaitForLast, "resize");
 }
 
 
@@ -224,7 +227,7 @@ jQuery(document).ready(function($) {
   $(document).on('tap', '.widgettitle',function(){
     var el = $(this);
     var parent = el.parent();
-    var nav = parent.find('nav');
+    var nav = parent.find('nav, .collapse');
     
    // console.log((nav).is(':visible'));
     
@@ -235,6 +238,9 @@ jQuery(document).ready(function($) {
     
   });
   
+    
+  
+
 
   
   $(".js-show-store-dropdown").hoverIntent({

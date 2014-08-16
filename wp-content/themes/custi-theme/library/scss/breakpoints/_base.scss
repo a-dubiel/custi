@@ -420,11 +420,12 @@ html:not(.ua-mobile-iphone) {
   width:100%;
   background: $white;
   border-top:1px solid $border-color;
-  z-index:99;
+  z-index:3;
 
-  nav.hide-list {
+  nav.hide-list, .collapse.hide-list {
     display: none;
   }
+  
   
   
   
@@ -598,13 +599,37 @@ html:not(.ua-mobile-iphone) {
           .add-to-cart-text:before {
             content: 'Dodaj do koszyka';
           }
-
+          
+          
         
       }
 
       .product-cta {
         padding:0 10px 10px;
       }
+      
+      .btn-add-to-mix {
+        display:block;
+        float:right;
+        color: $custi-green;
+        border:1px solid $custi-green;
+        padding:1px 5px;
+        border-radius:3px;
+        font-size:0.875em;
+        text-transform: uppercase;
+        font-weight: 600;
+        
+        &:hover {
+          background: $custi-green;
+          color:$white;
+          @include transition(all 0.2s ease-in-out);
+        }
+        
+        .fa {
+          margin-left:5px;
+        }
+      }
+
       
       
   }  
@@ -755,6 +780,12 @@ html:not(.ua-mobile-iphone) {
   a.product-info-more {
     font-weight: 600;
     text-decoration: underline;
+  }
+}
+
+.term-batoniki-podstawa {
+  .price {
+    font-size:1.2em;
   }
 }
 

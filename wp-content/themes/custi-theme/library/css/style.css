@@ -2205,9 +2205,9 @@ html:not(.ua-mobile-iphone) .mobile-nav-icon {
   width: 100%;
   background: white;
   border-top: 1px solid #ededed;
-  z-index: 99;
+  z-index: 3;
   text-align: center; }
-  .shop-sidebar nav.hide-list {
+  .shop-sidebar nav.hide-list, .shop-sidebar .collapse.hide-list {
     display: none; }
   .shop-sidebar h5, .shop-sidebar .widgettitle {
     font-size: 1.125em;
@@ -2323,6 +2323,23 @@ html:not(.ua-mobile-iphone) .mobile-nav-icon {
       content: 'Dodaj do koszyka'; }
   .products .product-wrap .product-cta {
     padding: 0 10px 10px; }
+  .products .product-wrap .btn-add-to-mix {
+    display: block;
+    float: right;
+    color: #79ac3c;
+    border: 1px solid #79ac3c;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 0.875em;
+    text-transform: uppercase;
+    font-weight: 600; }
+    .products .product-wrap .btn-add-to-mix:hover {
+      background: #79ac3c;
+      color: white;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+    .products .product-wrap .btn-add-to-mix .fa {
+      margin-left: 5px; }
 
 .shop-container .page-title {
   font-size: 1.5em;
@@ -2404,6 +2421,9 @@ html:not(.ua-mobile-iphone) .mobile-nav-icon {
   .product-info a.product-info-more {
     font-weight: 600;
     text-decoration: underline; }
+
+.term-batoniki-podstawa .price {
+  font-size: 1.2em; }
 
 .nav {
   border-bottom: 0;
@@ -3151,7 +3171,7 @@ you can add resource intensive styles.
   .shop-sidebar-wrapper.fixed {
     position: fixed;
     top: 0;
-    z-index: 999; }
+    z-index: 1; }
 
   .mobile-nav-wrap {
     display: none; }
