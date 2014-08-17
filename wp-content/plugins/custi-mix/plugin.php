@@ -66,7 +66,7 @@ class Custi_Mix extends WP_Widget {
 			__( 'Custi Mix', $this->get_widget_slug() ),
 			array(
 				'classname'  => $this->get_widget_slug().'-class',
-				'description' => __( 'Short description of the widget goes here.', $this->get_widget_slug() )
+				'description' => __( 'Create your mix.', $this->get_widget_slug() )
 			)
 		);
 
@@ -77,13 +77,69 @@ class Custi_Mix extends WP_Widget {
 		// Register site styles and scripts
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_widget_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_widget_scripts' ) );
+		
+		add_action('wp_ajax_add_to_mix', array( $this, 'add_to_mix'));
+		add_action('wp_ajax_nopriv_add_to_mix', array( $this, 'add_to_mix'));
+
 
 		// Refreshing the widget's cached output with each new post
 		add_action( 'save_post',    array( $this, 'flush_widget_cache' ) );
 		add_action( 'deleted_post', array( $this, 'flush_widget_cache' ) );
 		add_action( 'switch_theme', array( $this, 'flush_widget_cache' ) );
+		
+		
 
 	} // end constructor
+	
+  public function add_to_mix() {
+  
+   global $wpdb;
+   
+
+
+		try {  		
+  		$nonce = $_POST['nonce'];
+  		$product_id = $_POST['id'];
+  		$mix_id = $_COOKIE['custi_mix'];
+  		  		
+  		if ( ! wp_verify_nonce( $nonce, 'custi-nonce' ) )
+	    	die ( 'Busted!');
+      
+      // check if there is a product id
+      if(isset($product_id)) {
+      
+
+      //  $product = get_product($id);
+      //  print_r($product->get_price());
+        
+        // add to mix
+        if(isset($mix_id)) {
+
+          $check = $wpdb->get_row( "SELECT * FROM wp_custi_mixes WHERE mix_id = '$mix_id' AND product_id = '$product_id'" );
+            
+          // add new product to mix
+          if(is_null($check)) { 
+           $wpdb->insert( 'wp_custi_mixes', array( 'mix_id' => $mix_id, 'product_id' => $product_id ));
+          }
+          // product exists so update the count
+          else {
+            $count = $wpdb->get_var( "SELECT product_count FROM wp_custi_mixes WHERE mix_id = '$mix_id' AND product_id = '$product_id'" );            
+            $wpdb->update( 'wp_custi_mixes', array('product_count' => intval($count)+1), array('mix_id' => $mix_id, 'product_id' => $product_id) );
+                   
+          }
+          
+        }
+              
+
+      }
+	   
+	   
+	   		
+		} catch(Exception $e){
+  		exit;
+		}
+		exit;
+	} 
 
 
     /**
@@ -143,6 +199,7 @@ class Custi_Mix extends WP_Widget {
 		print $widget_string;
 
 	} // end widget
+	
 	
 	
 	public function flush_widget_cache() 
@@ -251,6 +308,10 @@ class Custi_Mix extends WP_Widget {
 		wp_enqueue_script( $this->get_widget_slug().'-script', plugins_url( 'js/widget.js', __FILE__ ), array('jquery') );
 
 	} // end register_widget_scripts
+	
+	
+	
+
 
 } // end class
 
