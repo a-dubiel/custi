@@ -93,7 +93,9 @@ class Custi_Mix extends WP_Widget {
 	
   public function add_to_mix() {
   
-   global $wpdb;
+   global $wpdb; 
+   
+   $woocommerce_product = new WC_Product_Factory();
    
 
 
@@ -101,30 +103,61 @@ class Custi_Mix extends WP_Widget {
   		$nonce = $_POST['nonce'];
   		$product_id = $_POST['id'];
   		$mix_id = $_COOKIE['custi_mix'];
+  		$product = $woocommerce_product->get_product($product_id);
+  		$product_cat = wp_get_post_terms( $product_id, 'product_cat')[0];
   		  		
-  		if ( ! wp_verify_nonce( $nonce, 'custi-nonce' ) )
+  		if ( ! wp_verify_nonce( $nonce, 'custi-nonce_'.$product_id ) )
 	    	die ( 'Busted!');
       
       // check if there is a product id
       if(isset($product_id)) {
-      
-
-      //  $product = get_product($id);
-      //  print_r($product->get_price());
         
         // add to mix
         if(isset($mix_id)) {
 
-          $check = $wpdb->get_row( "SELECT * FROM wp_custi_mixes WHERE mix_id = '$mix_id' AND product_id = '$product_id'" );
+          // check if product exists
+          $check = $wpdb->get_row( "SELECT * FROM wp_custi_mixes WHERE mix_id = '$mix_id'" );
             
-          // add new product to mix
+          // this is a new product
           if(is_null($check)) { 
-           $wpdb->insert( 'wp_custi_mixes', array( 'mix_id' => $mix_id, 'product_id' => $product_id ));
+            // make sure we add the base first
+            if($product_cat->slug == 'batoniki-podstawa' || $product_cat->slug == 'mieszanki-podstawa') {   
+              $wpdb->insert( 'wp_custi_mixes', array( 'mix_id' => $mix_id, 'product_id' => $product_id, 'product_cat' => $product_cat->slug ));
+              echo json_encode('redirect');
+            }
+            else {
+              echo json_encode(array('type' => 'error', 'message' => 'Dodaj bazę najpierw!'));
+
+            }          
           }
-          // product exists so update the count
-          else {
-            $count = $wpdb->get_var( "SELECT product_count FROM wp_custi_mixes WHERE mix_id = '$mix_id' AND product_id = '$product_id'" );            
-            $wpdb->update( 'wp_custi_mixes', array('product_count' => intval($count)+1), array('mix_id' => $mix_id, 'product_id' => $product_id) );
+          // product exists
+          else {              
+              // check if there is a base
+              if($this->has_base($mix_id, $product_cat->slug)) {
+                //product has base but user wants to change it, warn him to remove the old one first
+                 if($product_cat->slug == 'batoniki-podstawa' || $product_cat->slug == 'mieszanki-podstawa') { 
+                   echo json_encode(array('type' => 'error', 'message' => 'Możesz mieć tylko jedną bazę. Usuń starą, aby dodać nową! '));
+                 }
+                 // its not a new base so keep on going
+                 else {
+                   // check if this was already added
+                   if($this->already_added($mix_id, $product_id)) {
+                     // product already added, update it and increase the count
+                      $count = $wpdb->get_var( "SELECT product_count FROM wp_custi_mixes WHERE mix_id = '$mix_id' AND product_id = '$product_id'" );            
+                      $wpdb->update( 'wp_custi_mixes', array('product_count' => intval($count)+1), array('mix_id' => $mix_id, 'product_id' => $product_id) );
+                      echo json_encode('dodano wiecej skladnika');
+                   }
+                   else {
+                     // this is a new product, add it
+                      $wpdb->insert( 'wp_custi_mixes', array( 'mix_id' => $mix_id, 'product_id' => $product_id, 'product_cat' => $product_cat->slug ));
+                      echo json_encode('dodano nowy skladnik');
+                   }
+                 }
+              }
+              // no base yet
+              else {
+                echo json_encode(array('type' => 'error', 'message' => 'Najpierw dodaj bazę! '));
+              }
                    
           }
           
@@ -140,6 +173,29 @@ class Custi_Mix extends WP_Widget {
 		}
 		exit;
 	} 
+	
+	public function has_base($mix_id, $base_cat) {
+	  global $wpdb;
+  	$check = $wpdb->get_row( "SELECT * FROM wp_custi_mixes WHERE mix_id = '$mix_id' AND product_cat = '$base_cat'" );
+  	
+  	if(is_null($check)) {
+    	return false;
+  	}
+  	else return true;
+	}
+	
+	public function already_added($mix_id, $product_id) {
+	  global $wpdb;
+  	$check = $wpdb->get_row( "SELECT * FROM wp_custi_mixes WHERE mix_id = '$mix_id' AND product_id = '$product_id'" );
+  	
+  	if(is_null($check)) {
+    	return false;
+  	}
+  	else return true;
+	}
+	
+	
+
 
 
     /**

@@ -17,9 +17,10 @@
           id : productId,
           nonce : checkNonce         
         },
-        function(response){
-          console.log(response); 
-          console.log($.cookie('custi_mix'));
+        function(res){
+        
+          var res = $.parseJSON(res);
+          console.log(res);
           return false;
           
         });

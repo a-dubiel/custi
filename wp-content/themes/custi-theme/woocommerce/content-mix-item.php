@@ -40,7 +40,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
   <div class="product-wrap">
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
-	<a href="<?php the_permalink(); ?>">
+	<a href="#" data-product-id="<?php echo $id ?>" >
 		<?php
 			/**
 			 * woocommerce_before_shop_loop_item_title hook
@@ -54,7 +54,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 		<h3><?php the_title(); ?></h3>
 		
     <p><?php echo substr($product->post->post_excerpt, 0, 70).'...' ?></p>
-    <p><a class="product-info-more" href="<?php the_permalink(); ?>">więcej informacji</a></p>
+    <p><a class="product-info-more" href="#" data-product-id="<?php echo $id ?>" >więcej informacji</a></p>
     
     <?php// print_r( get_post_meta($product->post->ID, 'waga_cena_kg') )?>
 		<?php
@@ -68,7 +68,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 		?>
 		<?php 
   		$id = $product->id;
-  		$nonce = wp_create_nonce( 'custi-nonce' );
+  		$nonce = wp_create_nonce( 'custi-nonce_'.$id );
   		
 		?>
 		<a class="btn-add-to-mix" data-product-id="<?php echo $id ?>" data-nonce="<?php echo $nonce ?>" href="#">Dodaj<i class="fa fa-plus-circle"></i></a>
